@@ -7,7 +7,7 @@ const Header = () => (
         <p>Image</p>
       </div>
       <div className="title-text">
-        <p>My Task</p>
+        <p className="main-title">My Task</p>
         <p>My Task</p>
       </div>
     </div>

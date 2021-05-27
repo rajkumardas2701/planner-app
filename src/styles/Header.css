@@ -19,7 +19,7 @@
 }
 
 .title-text {
-  width: 10%;
+  width: 60%;
 }
 
 .image-task {
@@ -28,5 +28,13 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+}
 
+.image {
+  background-color: red;
+  padding: 15px 10px;
+}
+
+.main-title {
+  font-size: 20px;
 }

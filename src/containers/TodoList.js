@@ -1,44 +1,27 @@
-import React, { useEffect } from 'react';
-import initialTodos from '../constants/initialState';
-import '../styles/ToDoList.css';
-import {
-  notStarted, inProgress, completed, categorizeToDos,
-} from '../constants/categorizeToDos';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import BoardView from '../components/BoardView';
+import ScheduleView from '../components/ScheduleView';
 
-const ToDoList = () => {
-  // const [todoList, setTodolist] = useState(initialTodos);
-
+const ToDoList = ({ view }) => {
+  const [viewSection, setViewSection] = useState(view);
   useEffect(() => {
-    categorizeToDos(initialTodos);
-  });
-
-  // setTodolist(todoList);
+    setViewSection(viewSection);
+  }, [viewSection]);
 
   return (
-    <div className="boardView">
-      <div>
-        <h2>Not started</h2>
-        <button type="button">+ Add task</button>
-        {
-          notStarted.map((todo) => <p key={todo.name}>{todo.tname}</p>)
-        }
-      </div>
-      <div>
-        <h2>In progress</h2>
-        <button type="button">+ Add task</button>
-        {
-          inProgress.map((todo) => <p key={todo.name}>{todo.tname}</p>)
-        }
-      </div>
-      <div>
-        <h2>Completed</h2>
-        <button type="button">+ Add task</button>
-        {
-          completed.map((todo) => <p key={todo.name}>{todo.tname}</p>)
-        }
-      </div>
+    <div>
+      {
+        (viewSection === 'board')
+          ? (<BoardView />)
+          : (<ScheduleView />)
+      }
     </div>
   );
+};
+
+ToDoList.propTypes = {
+  view: PropTypes.string.isRequired,
 };
 
 export default ToDoList;

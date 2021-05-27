@@ -9,8 +9,8 @@ const BoardView = () => {
   return (
     <div>
       <h3>Board view</h3>
-      <button type="button" onClick={handleClick}>Add Task</button>
-      { showForm && <AddTask />}
+      <button type="button" onClick={handleClick}>+ Add Task</button>
+      { showForm && <AddTask /> }
     </div>
   );
 };

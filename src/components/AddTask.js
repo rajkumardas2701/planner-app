@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import '../styles/AddTask.css';
 
 const AddTask = () => {
   const [taskform, setTaskForm] = useState({
-    id: 0,
+    id: '',
     name: '',
     toDo: 'To do',
     dueDate: '',
@@ -18,7 +19,7 @@ const AddTask = () => {
   };
   return (
     <div>
-      <form onSubmit={taskSubmit}>
+      <form onSubmit={taskSubmit} className="add-task-form">
         <input
           placeholder="Enter a task name"
           name="name"

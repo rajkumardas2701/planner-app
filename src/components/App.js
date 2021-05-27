@@ -11,8 +11,9 @@ const App = () => {
   }, [view]);
   return (
     <div className="App">
+      {/* {console.log('view state from App', view)} */}
       <NavBar />
-      <Header setView={(view) => setView(view)} />
+      <Header setView={setView} />
       <ToDoList view={view} />
     </div>
   );

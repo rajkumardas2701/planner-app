@@ -6,7 +6,6 @@ import NavBar from '../layouts/NavBar';
 const App = () => (
   <div className="App">
     <NavBar />
-    <h1>Work in progress!!!</h1>
     <Header />
     <ToDoList />
   </div>

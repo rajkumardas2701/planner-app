@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { uuid } from 'uuidv4';
 import '../styles/AddTask.css';
+import { addToDo } from '../helper/manageToDos';
 
 const AddTask = () => {
   const [taskform, setTaskForm] = useState({
@@ -11,7 +13,15 @@ const AddTask = () => {
     progress: '',
   });
   const taskSubmit = () => {
-
+    const task = {
+      id: uuid(),
+      name: taskform.name,
+      toDo: taskform.toDo,
+      dueDate: taskform.dueDate,
+      assign: taskform.assign,
+      progress: 'Not Started',
+    };
+    addToDo(task);
   };
 
   const handleChange = ({ target: { name, value } }) => {

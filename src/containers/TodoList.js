@@ -1,26 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import BoardView from '../components/BoardView';
 import ScheduleView from '../components/ScheduleView';
-import { todos } from '../helper/manageToDos';
 
-const ToDoList = ({ view }) => {
-  const [tasks, setToDos] = useState([]);
-  useEffect(() => {
-    setToDos(todos);
-  }, []);
-  return (
-    <div>
-      {/* {console.log('view state from todoList', viewSection)} */}
-      {/* {console.log('view state from todoList', view)} */}
-      {
-          (view === 'board')
-            ? (<BoardView tasks={tasks} />)
-            : (<ScheduleView tasks={tasks} />)
-        }
-    </div>
-  );
-};
+const ToDoList = ({ view }) => (
+  <div>
+    {/* {console.log('view setTask from todoList', view)} */}
+    {/* {console.log('view task from todoList', task)} */}
+    {
+        (view === 'board')
+          ? (<BoardView />)
+          : (<ScheduleView />)
+      }
+    {/* <BoardView /> */}
+  </div>
+);
 
 ToDoList.propTypes = {
   view: PropTypes.string.isRequired,

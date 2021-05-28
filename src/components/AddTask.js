@@ -1,27 +1,24 @@
 import { useState } from 'react';
-import { uuid } from 'uuidv4';
+// import { v4 as uuidv4 } from 'uuidv4';
 import '../styles/AddTask.css';
-import { addToDo } from '../helper/manageToDos';
+import PropTypes from 'prop-types';
 
-const AddTask = () => {
-  const [taskform, setTaskForm] = useState({
-    id: '',
-    name: '',
-    toDo: 'To do',
-    dueDate: '',
-    assign: '',
-    progress: '',
-  });
-  const taskSubmit = () => {
+const AddTask = ({ setTask }) => {
+  const [taskform, setTaskForm] = useState({});
+  // const {
+  //   name, toDo, dueDate, assign, progress,
+  // } = taskform;
+  const taskSubmit = (e) => {
     const task = {
-      id: uuid(),
+      id: Date.now(),
       name: taskform.name,
       toDo: taskform.toDo,
       dueDate: taskform.dueDate,
       assign: taskform.assign,
       progress: 'Not Started',
     };
-    addToDo(task);
+    setTask(task);
+    e.preventDefault();
   };
 
   const handleChange = ({ target: { name, value } }) => {
@@ -29,6 +26,8 @@ const AddTask = () => {
   };
   return (
     <div>
+      {/* {console.log('addTask form details', taskform)} */}
+      {/* {console.log('set task from AddTask view', setTask)} */}
       <form onSubmit={taskSubmit} className="add-task-form">
         <input
           placeholder="Enter a task name"
@@ -59,12 +58,20 @@ const AddTask = () => {
           value={taskform.assign}
           onChange={handleChange}
         />
-        <button type="button">
+        <button type="submit">
           Add Task
         </button>
       </form>
     </div>
   );
+};
+
+AddTask.propTypes = {
+  setTask: PropTypes.func,
+};
+
+AddTask.defaultProps = {
+  setTask: () => {},
 };
 
 export default AddTask;

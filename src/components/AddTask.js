@@ -3,7 +3,14 @@ import '../styles/AddTask.css';
 import PropTypes from 'prop-types';
 
 const AddTask = ({ setParentTask, setShowForm }) => {
-  const [taskform, setTaskForm] = useState({});
+  const [taskform, setTaskForm] = useState({
+    id: '',
+    name: '',
+    toDo: '',
+    dueDate: '',
+    assign: '',
+    progress: '',
+  });
   const {
     id, name, toDo, dueDate, assign, progress,
   } = taskform;
@@ -21,10 +28,10 @@ const AddTask = ({ setParentTask, setShowForm }) => {
     e.preventDefault();
     const task = {
       id: Date.now(),
-      name: taskform.name,
-      toDo: taskform.toDo,
-      dueDate: taskform.dueDate,
-      assign: taskform.assign,
+      name,
+      toDo,
+      dueDate,
+      assign,
       progress: 'Not Started',
     };
     setParentTask(task);

@@ -1,48 +1,47 @@
 import { useState, useEffect } from 'react';
-//
-// import PropTypes from 'prop-types';
-// import { uuid } from 'uuidv4';
+import PropTypes from 'prop-types';
 import AddTask from './AddTask';
-import { todos } from '../helper/manageToDos';
 import Task from './Task';
 
-const BoardView = () => {
+const BoardView = ({ allTasks, setParentTask }) => {
   const [showForm, setShowForm] = useState(false);
-  const [task, setTask] = useState({});
+  const [currentToDos, setCurrentToDos] = useState(allTasks);
   useEffect(() => {
-    todos.push(task);
-    // localStorage.setItem('tasks', todos);
-  }, [task]);
+    setCurrentToDos(currentToDos);
+    console.log('inside use effect of boardview');
+  }, [currentToDos]);
   const handleClick = (e) => {
     e.preventDefault();
     setShowForm(!showForm);
   };
+  // setCurrentToDos(allTasks);
   return (
     <div>
       <h3>Board view</h3>
-      {/* {console.log('task from BoardView', task)} */}
+      {console.log('Alltask from BoardView', allTasks)}
       <button type="button" onClick={handleClick}>+ Add Task</button>
-      { showForm && <AddTask setTask={setTask} /> }
+      { showForm && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
       <div>
-        {/* {console.log('Boardtasks from Board view', todos)} */}
+        {console.log('Board currentToDos from Board view', currentToDos)}
+        {console.log('Board currentToDos length from Board view', currentToDos.length)}
         {
-          // (boardTasks[0] !== undefined && boardTasks.length)
-          (todos.length > 0 && todos[0] !== undefined)
-            ? (
-              todos.map((task) => (<Task task={task} key={task.id} />))
-            )
-            : (<li>Nothing to display</li>)
+          (currentToDos.length > 0
+          && (
+            currentToDos.map((todo) => <Task todo={todo} key={todo.id} />)
+          ))
         }
       </div>
     </div>
   );
 };
 
-// BoardView.propTypes = {
-//   // todos: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-//   // setTask: PropTypes.func,
-//   // boardTasks: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-// };
+// !(todo.id === '') &&
+// && task.name !== ''
+BoardView.propTypes = {
+  // todos: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  setParentTask: PropTypes.func.isRequired,
+  allTasks: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+};
 
 // BoardView.defaultProps = {
 //   // todos: [],

@@ -1,36 +1,37 @@
 import PropTypes from 'prop-types';
 
-const Task = ({ task }) => (
-  <ul key={task.id}>
+const Task = ({ todo }) => (
+  <ul>
     <li>
       id
-      {task.id}
+      {todo.id}
     </li>
     <li>
       name
-      {task.name}
+      {todo.name}
     </li>
     <li>
       To do
-      {task.toDo}
+      {todo.toDo}
     </li>
     <li>
       Due date
-      {task.dueDate}
+      {todo.dueDate}
     </li>
     <li>
       Assign
-      {task.assign}
+      {todo.assign}
     </li>
     <li>
       progress
-      {task.progress}
+      {todo.progress}
     </li>
+    {console.log('from task component', todo)}
   </ul>
 );
 
 Task.propTypes = {
-  task: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+  todo: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };
 
 export default Task;

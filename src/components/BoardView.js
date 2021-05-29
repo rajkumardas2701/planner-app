@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AddTask from './AddTask';
 import Task from './Task';
 
-const BoardView = ({ allTasks, setParentTask }) => {
+const BoardView = ({ allTasks, setParentTask, groupBy }) => {
   const [showForm, setShowForm] = useState(false);
   const [currentToDos, setCurrentToDos] = useState(allTasks);
   useEffect(() => {
@@ -19,6 +19,7 @@ const BoardView = ({ allTasks, setParentTask }) => {
     <div>
       <h3>Board view</h3>
       {console.log('Alltask from BoardView', allTasks)}
+      {console.log('groupBy from BoardView', groupBy)}
       <button type="button" onClick={handleClick}>+ Add Task</button>
       { showForm && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
       <div>
@@ -38,7 +39,7 @@ const BoardView = ({ allTasks, setParentTask }) => {
 // !(todo.id === '') &&
 // && task.name !== ''
 BoardView.propTypes = {
-  // todos: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  groupBy: PropTypes.string.isRequired,
   setParentTask: PropTypes.func.isRequired,
   allTasks: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };

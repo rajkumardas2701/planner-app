@@ -6,15 +6,19 @@ import NavBar from '../layouts/NavBar';
 
 const App = () => {
   const [view, setView] = useState('board');
+  const [groupBy, setGroupBy] = useState('Progress');
   useEffect(() => {
     setView(view);
   }, [view]);
+  useEffect(() => {
+    setGroupBy(groupBy);
+  }, [groupBy]);
   return (
     <div className="App">
       {/* {console.log('view state from App', view)} */}
       <NavBar />
-      <Header setView={setView} />
-      <ToDoList view={view} />
+      <Header setView={setView} setGroupBy={setGroupBy} />
+      <ToDoList view={view} groupBy={groupBy} />
     </div>
   );
 };

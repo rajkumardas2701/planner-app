@@ -1,8 +1,10 @@
 import '../styles/Header.css';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import GROUPS from '../constants/initialState';
 
-const Header = ({ setView }) => {
+const Header = ({ setView, setGroupBy }) => {
+  // set section is to highlight the selection board or schedule
   const [section, setSection] = useState('board');
   useEffect(() => {
     setSection(section);
@@ -16,6 +18,10 @@ const Header = ({ setView }) => {
     e.preventDefault();
     setView('schedule');
     setSection('schedule');
+  };
+  const handleGroupChange = (e) => {
+    // e.preventDefault();
+    setGroupBy(e.target.value);
   };
   return (
     <div className="header-container">
@@ -38,7 +44,14 @@ const Header = ({ setView }) => {
       </div>
       <div className="categories-section">
         <p>Filter</p>
-        <p>Group by</p>
+        <p>
+          Group by
+          <select onChange={handleGroupChange}>
+            {
+              GROUPS.map((group) => <option key={group} value={group}>{group}</option>)
+            }
+          </select>
+        </p>
       </div>
     </div>
   );
@@ -46,6 +59,7 @@ const Header = ({ setView }) => {
 
 Header.propTypes = {
   setView: PropTypes.func,
+  setGroupBy: PropTypes.func.isRequired,
 };
 
 Header.defaultProps = {

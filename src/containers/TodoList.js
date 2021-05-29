@@ -4,7 +4,7 @@ import BoardView from '../components/BoardView';
 import ScheduleView from '../components/ScheduleView';
 import { todos } from '../helper/manageToDos';
 
-const ToDoList = ({ view }) => {
+const ToDoList = ({ view, groupBy }) => {
   const [parentTask, setParentTask] = useState({});
   const [allTasks, setAllTasks] = useState(todos);
   useEffect(() => {
@@ -18,12 +18,12 @@ const ToDoList = ({ view }) => {
   }, [parentTask]);
   return (
     <div>
-      {/* {console.log('view setTask from todoList', view)} */}
+      {/* {console.log('groupby in todolist', groupBy)} */}
       {console.log('view Alltask from todoList', allTasks)}
       {console.log('view parentTask from todoList', parentTask)}
       {
           (view === 'board')
-            ? (<BoardView allTasks={allTasks} setParentTask={setParentTask} />)
+            ? (<BoardView allTasks={allTasks} setParentTask={setParentTask} groupBy={groupBy} />)
             : (<ScheduleView />)
         }
       {/* <BoardView /> */}
@@ -33,6 +33,7 @@ const ToDoList = ({ view }) => {
 
 ToDoList.propTypes = {
   view: PropTypes.string.isRequired,
+  groupBy: PropTypes.string.isRequired,
 };
 
 export default ToDoList;

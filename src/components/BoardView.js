@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AddTask from './AddTask';
-import Task from './Task';
+// import Task from './Task';
+import ProgressView from './ProgressView';
+import DueDateView from './DueDateView';
 
 const BoardView = ({ allTasks, setParentTask, groupBy }) => {
   const [showForm, setShowForm] = useState(false);
@@ -26,10 +28,23 @@ const BoardView = ({ allTasks, setParentTask, groupBy }) => {
         {console.log('Board currentToDos from Board view', currentToDos)}
         {console.log('Board currentToDos length from Board view', currentToDos.length)}
         {
-          (currentToDos.length > 0
-          && (
-            currentToDos.map((todo) => <Task todo={todo} key={todo.id} />)
-          ))
+          !(currentToDos.length > 0)
+          // && (
+            // currentToDos.map((todo) => <Task todo={todo} key={todo.id} />)
+            ? (
+              <div>
+                {
+                  (groupBy === 'Progress')
+                    ? (
+                      <ProgressView />
+                    )
+                    : (
+                      <DueDateView />
+                    )
+                }
+              </div>
+            )
+            : (<div />)
         }
       </div>
     </div>

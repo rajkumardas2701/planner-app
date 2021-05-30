@@ -12,17 +12,17 @@ const BoardView = ({ allTasks, setParentTask, groupBy }) => {
     setCurrentToDos(currentToDos);
     console.log('inside use effect of boardview');
   }, [currentToDos]);
-  const handleClick = (e) => {
-    e.preventDefault();
-    setShowForm(!showForm);
-  };
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+  //   setShowForm(!showForm);
+  // };
   // setCurrentToDos(allTasks);
   return (
     <div>
       <h3>Board view</h3>
       {console.log('Alltask from BoardView', allTasks)}
       {console.log('groupBy from BoardView', groupBy)}
-      <button type="button" onClick={handleClick}>+ Add Task</button>
+      {/* <button type="button" onClick={handleClick}>+ Add Task</button> */}
       { showForm && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
       <div>
         {console.log('Board currentToDos from Board view', currentToDos)}

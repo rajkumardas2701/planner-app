@@ -27,32 +27,22 @@ const BoardView = ({ allTasks, setParentTask, groupBy }) => {
       <div>
         {console.log('Board currentToDos from Board view', currentToDos)}
         {console.log('Board currentToDos length from Board view', currentToDos.length)}
-        {
-          !(currentToDos.length > 0)
-          // && (
-            // currentToDos.map((todo) => <Task todo={todo} key={todo.id} />)
-            ? (
-              <div>
-                {
-                  (groupBy === 'Progress')
-                    ? (
-                      <ProgressView setParentTask={setParentTask} />
-                    )
-                    : (
-                      <DueDateView setParentTask={setParentTask} />
-                    )
-                }
-              </div>
-            )
-            : (<div />)
-        }
+        <div>
+          {
+            (groupBy === 'Progress')
+              ? (
+                <ProgressView setParentTask={setParentTask} currentToDos={currentToDos} />
+              )
+              : (
+                <DueDateView setParentTask={setParentTask} currentToDos={currentToDos} />
+              )
+          }
+        </div>
       </div>
     </div>
   );
 };
 
-// !(todo.id === '') &&
-// && task.name !== ''
 BoardView.propTypes = {
   groupBy: PropTypes.string.isRequired,
   setParentTask: PropTypes.func.isRequired,

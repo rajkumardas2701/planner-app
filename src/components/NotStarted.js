@@ -8,11 +8,13 @@ const NotStarted = ({ setParentTask }) => {
     e.preventDefault();
     setShowForm(!showForm);
   };
+  const status = 'Not started';
   return (
     <div>
       <h4 className="progress-title">Not started</h4>
       <button type="button" onClick={handleClick} className="progress-btns">+ Add Task</button>
-      { showForm && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
+      { showForm
+      && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} /> }
     </div>
   );
 };

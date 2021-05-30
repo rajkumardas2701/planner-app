@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../styles/AddTask.css';
 import PropTypes from 'prop-types';
 
-const AddTask = ({ setParentTask, setShowForm }) => {
+const AddTask = ({ setParentTask, setShowForm, status }) => {
   const [taskform, setTaskForm] = useState({
     id: '',
     name: '',
@@ -32,7 +32,7 @@ const AddTask = ({ setParentTask, setShowForm }) => {
       toDo,
       dueDate,
       assign,
-      progress: 'Not Started',
+      progress: status,
     };
     setParentTask(task);
     resetForm();
@@ -96,10 +96,11 @@ const AddTask = ({ setParentTask, setShowForm }) => {
 AddTask.propTypes = {
   setParentTask: PropTypes.func.isRequired,
   setShowForm: PropTypes.func.isRequired,
+  status: PropTypes.string,
 };
 
-// AddTask.defaultProps = {
-//   setTask: () => {},
-// };
+AddTask.defaultProps = {
+  status: 'Not started',
+};
 
 export default AddTask;

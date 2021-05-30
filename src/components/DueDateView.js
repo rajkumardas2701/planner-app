@@ -8,6 +8,7 @@ import NoDueDateView from './NoDueDateView';
 import ThisWeekView from './ThisWeekView';
 import NextWeekView from './NextWeekView';
 import filterPerDueDate from '../helper/dueDateHelper';
+import '../styles/DueDateView.css';
 
 const DueDateView = ({ setParentTask, currentToDos }) => {
   const [dueDateTodos, setDueDateTodos] = useState(currentToDos);
@@ -26,49 +27,49 @@ const DueDateView = ({ setParentTask, currentToDos }) => {
   } = filterPerDueDate(dueDateTodos);
   return (
     <div className="due-date-view-container">
-      <div className="due-date-each">
+      <div>
         {console.log('late list', late)}
         {
           (late.length > 0)
           && (<LateView setParentTask={setParentTask} late={late} />)
         }
       </div>
-      <div className="due-date-each">
+      <div>
         {console.log('today list', today)}
         {
           (today.length > 0)
           && (<TodayView setParentTask={setParentTask} today={today} />)
         }
       </div>
-      <div className="due-date-each">
+      <div>
         {console.log('tomorrow list', tomorrow)}
         {
           (tomorrow.length > 0)
           && (<TomorrowView setParentTask={setParentTask} tomorrow={tomorrow} />)
         }
       </div>
-      <div className="due-date-each">
+      <div>
         {console.log('this week list', thisWeek)}
         {
           (thisWeek.length > 0)
           && (<ThisWeekView setParentTask={setParentTask} thisWeek={thisWeek} />)
         }
       </div>
-      <div className="due-date-each">
+      <div>
         {console.log('this week list', thisWeek)}
         {
           (nextWeek.length > 0)
           && (<NextWeekView setParentTask={setParentTask} nextWeek={nextWeek} />)
         }
       </div>
-      <div className="due-date-each">
+      <div>
         {console.log('future list', future)}
         {
           (future.length > 0)
           && (<FutureView setParentTask={setParentTask} future={future} />)
         }
       </div>
-      <div className="due-date-each">
+      <div>
         {console.log('no due list', noDueDate)}
         {
           (noDueDate.length > 0)

@@ -1,6 +1,6 @@
 const TomorrowView = () => (
   <div>
-    LateView
+    Tomorrow View
   </div>
 );
 

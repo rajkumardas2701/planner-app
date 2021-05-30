@@ -18,17 +18,18 @@ const DueDateView = ({ setParentTask, currentToDos }) => {
   let future;
   let noDueDate;
   const dateDifference = (value) => {
-    const diff = parseInt(((new Date()).getTime() - (new Date(value)).getTime())
-    / (1000 * 3600 * 24), 10);
+    const diff = ((new Date(new Date().toISOString().slice(0, 10))).getTime()
+    - (new Date(value)).getTime())
+    / (1000 * 3600 * 24);
     console.log(diff);
     return diff;
   };
-  if (currentToDos.length > 0) {
-    late = currentToDos.filter((todo) => dateDifference(todo.dueDate) > 0);
-    today = currentToDos.filter((todo) => dateDifference(todo.dueDate) === 0);
-    tomorrow = currentToDos.filter((todo) => dateDifference(todo.dueDate) === -1);
-    future = currentToDos.filter((todo) => dateDifference(todo.dueDate) < -1);
-    noDueDate = currentToDos.filter((todo) => todo.dueDate === '');
+  if (dueDateTodos.length > 0) {
+    late = dueDateTodos.filter((todo) => dateDifference(todo.dueDate) > 0);
+    today = dueDateTodos.filter((todo) => dateDifference(todo.dueDate) === 0);
+    tomorrow = dueDateTodos.filter((todo) => dateDifference(todo.dueDate) === -1);
+    future = dueDateTodos.filter((todo) => dateDifference(todo.dueDate) < -1);
+    noDueDate = dueDateTodos.filter((todo) => todo.dueDate === '');
   }
   return (
     <div className="due-date-view-container">

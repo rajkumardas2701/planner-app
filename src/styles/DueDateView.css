@@ -1,0 +1,4 @@
+.due-date-view-container {
+  display: flex;
+  flex-direction: row;
+}

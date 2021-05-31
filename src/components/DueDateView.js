@@ -28,51 +28,51 @@ const DueDateView = ({ setParentTask, currentToDos }) => {
   return (
     <div className="due-date-view-container">
       <div>
-        {console.log('late list', late)}
+        {/* {console.log('late list', late)} */}
         {
-          (late.length > 0)
+          (late && late.length > 0)
           && (<LateView setParentTask={setParentTask} late={late} />)
         }
       </div>
       <div>
-        {console.log('today list', today)}
+        {/* {console.log('today list', today)} */}
         {
-          (today.length > 0)
+          (today && today.length > 0)
           && (<TodayView setParentTask={setParentTask} today={today} />)
         }
       </div>
       <div>
-        {console.log('tomorrow list', tomorrow)}
+        {/* {console.log('tomorrow list', tomorrow)} */}
         {
-          (tomorrow.length > 0)
+          (tomorrow && tomorrow.length > 0)
           && (<TomorrowView setParentTask={setParentTask} tomorrow={tomorrow} />)
         }
       </div>
       <div>
-        {console.log('this week list', thisWeek)}
+        {/* {console.log('this week list', thisWeek)} */}
         {
-          (thisWeek.length > 0)
+          (thisWeek && thisWeek.length > 0)
           && (<ThisWeekView setParentTask={setParentTask} thisWeek={thisWeek} />)
         }
       </div>
       <div>
-        {console.log('this week list', thisWeek)}
+        {/* {console.log('this week list', thisWeek)} */}
         {
-          (nextWeek.length > 0)
+          (nextWeek && nextWeek.length > 0)
           && (<NextWeekView setParentTask={setParentTask} nextWeek={nextWeek} />)
         }
       </div>
       <div>
-        {console.log('future list', future)}
+        {/* {console.log('future list', future)} */}
         {
-          (future.length > 0)
+          (future && future.length > 0)
           && (<FutureView setParentTask={setParentTask} future={future} />)
         }
       </div>
       <div>
-        {console.log('no due list', noDueDate)}
+        {/* {console.log('no due list', noDueDate)} */}
         {
-          (noDueDate.length > 0)
+          (noDueDate && noDueDate.length > 0)
           && (<NoDueDateView setParentTask={setParentTask} noDueDate={noDueDate} />)
         }
       </div>

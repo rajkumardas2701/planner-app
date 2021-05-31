@@ -1,7 +1,7 @@
 import '../styles/Header.css';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
-import GROUPS from '../constants/initialState';
+import { GROUPS } from '../constants/initialState';
 
 const Header = ({ setView, setGroupBy }) => {
   // set section is to highlight the selection board or schedule

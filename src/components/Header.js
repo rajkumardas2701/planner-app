@@ -1,14 +1,18 @@
 import '../styles/Header.css';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
-import { GROUPS } from '../constants/initialState';
+import { GROUPS, FILTERS } from '../constants/initialState';
 
 const Header = ({ setView, setGroupBy }) => {
   // set section is to highlight the selection board or schedule
   const [section, setSection] = useState('board');
+  const [showFilters, setShowFilters] = useState(false);
   useEffect(() => {
     setSection(section);
   }, [section]);
+  const handleFilterClick = () => {
+    setShowFilters(!showFilters);
+  };
   const handleBoardChange = (e) => {
     e.preventDefault();
     setView('board');
@@ -43,7 +47,42 @@ const Header = ({ setView, setGroupBy }) => {
         <p>Name</p>
       </div>
       <div className="categories-section">
-        <p>Filter</p>
+        <button type="button" onClick={handleFilterClick} className="filter-btn">
+          Filter ()
+          {
+            showFilters
+            && (
+            <span className="filter-dropdown">
+              <select multiple className="filter-select">
+                <optgroup label="Progress">
+                  {
+                FILTERS[1].map((progress) => (
+                  <option
+                    value={progress}
+                    key={progress}
+                  >
+                    {progress}
+                  </option>
+                ))
+              }
+                </optgroup>
+                <optgroup label="Due">
+                  {
+                FILTERS[0].map((due) => (
+                  <option
+                    value={due}
+                    key={due}
+                  >
+                    {due}
+                  </option>
+                ))
+              }
+                </optgroup>
+              </select>
+            </span>
+            )
+          }
+        </button>
         <p>
           Group by
           <select onChange={handleGroupChange}>

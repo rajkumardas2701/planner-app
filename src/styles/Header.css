@@ -18,6 +18,10 @@
   border: 1px solid black;
 }
 
+.categories-section {
+  align-items: center;
+}
+
 .title-text {
   width: 60%;
 }
@@ -37,4 +41,20 @@
 
 .main-title {
   font-size: 20px;
+}
+
+.filter-btn {
+  height: 30px;
+  position: relative;
+}
+
+.filter-dropdown {
+  position: absolute;
+  bottom: -255px;
+  right: -14px;
+}
+
+.filter-select {
+  width: 150px;
+  height: 250px;
 }

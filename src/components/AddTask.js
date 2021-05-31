@@ -41,6 +41,15 @@ const AddTask = ({ setParentTask, setShowForm, status }) => {
   const handleChange = ({ target: { name, value } }) => {
     setTaskForm({ ...taskform, [name]: value });
   };
+  // window.onclick = (e) => {
+  //   console.log(e.target.className);
+  //   e.preventDefault();
+  //   if ((e.target.className !== 'add-task-form') || (e.target.className !== 'progress-each') || (
+  //     e.target.className !== 'progress-btns'
+  //   )) {
+  //     setShowForm(false);
+  //   }
+  // };
   return (
     <div>
       {console.log('addTask form details', taskform)}

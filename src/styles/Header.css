@@ -43,18 +43,35 @@
   font-size: 20px;
 }
 
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  /* overflow-y: hidden !important; */
+  position: absolute;
+  top: 163px;
+  right: 385px;
+}
+
+.progress-filters,
+.due-filters {
+  display: flex;
+  flex-direction: column;
+}
+
 .filter-btn {
-  height: 30px;
   position: relative;
 }
 
-.filter-dropdown {
+/* .filter-container {
   position: absolute;
-  bottom: -255px;
-  right: -14px;
+  bottom: 198px;
+  right: 383px;
+} */
+
+.filter-title {
+  font-weight: 700;
 }
 
-.filter-select {
-  width: 150px;
-  height: 250px;
+.filter-btn {
+  text-align: left;
 }

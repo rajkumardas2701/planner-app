@@ -7,11 +7,14 @@ const Header = ({ setView, setGroupBy }) => {
   // set section is to highlight the selection board or schedule
   const [section, setSection] = useState('board');
   const [showFilters, setShowFilters] = useState(false);
+  const [showProgress, setShowProgress] = useState(false);
+  const [showDue, setShowDue] = useState(false);
   useEffect(() => {
     setSection(section);
   }, [section]);
-  const handleFilterClick = () => {
+  const handleFilterClick = (e) => {
     setShowFilters(!showFilters);
+    e.preventDefault();
   };
   const handleBoardChange = (e) => {
     e.preventDefault();
@@ -27,6 +30,21 @@ const Header = ({ setView, setGroupBy }) => {
     // e.preventDefault();
     setGroupBy(e.target.value);
   };
+  const handleProgressList = (e) => {
+    e.preventDefault();
+    setShowProgress(!showProgress);
+  };
+  const handleDueList = (e) => {
+    e.preventDefault();
+    setShowDue(!showDue);
+  };
+  // window.onclick = (e) => {
+  //   // console.log(e.target.className);
+  //   e.preventDefault();
+  //   if (e.target.className !== 'filter-btn') {
+  //     setShowFilters(false);
+  //   }
+  // };
   return (
     <div className="header-container">
       <div className="image-task">
@@ -49,40 +67,41 @@ const Header = ({ setView, setGroupBy }) => {
       <div className="categories-section">
         <button type="button" onClick={handleFilterClick} className="filter-btn">
           Filter ()
-          {
+        </button>
+        {
             showFilters
             && (
-            <span className="filter-dropdown">
-              <select multiple className="filter-select">
-                <optgroup label="Progress">
-                  {
-                FILTERS[1].map((progress) => (
-                  <option
-                    value={progress}
-                    key={progress}
-                  >
-                    {progress}
-                  </option>
-                ))
+            <div className="filter-container">
+              <button type="button" className="filter-title filter-btn" onClick={handleProgressList}>
+                Progress
+              </button>
+              {
+                showProgress
+                 && (
+                 <div className="progress-filters">
+                   {
+                    FILTERS[1].map((progress) => <button type="button" key={progress} className="filter-btn">{progress}</button>)
+                  }
+                 </div>
+                 )
               }
-                </optgroup>
-                <optgroup label="Due">
-                  {
-                FILTERS[0].map((due) => (
-                  <option
-                    value={due}
-                    key={due}
-                  >
-                    {due}
-                  </option>
-                ))
+              <button type="button" className="filter-title filter-btn" onClick={handleDueList}>
+                Due
+              </button>
+              {
+                showDue
+                && (
+                  <div className="due-filters">
+                    {
+                    FILTERS[0].map((due) => <button type="button" key={due} className="filter-btn">{due}</button>)
+                  }
+                  </div>
+                )
               }
-                </optgroup>
-              </select>
-            </span>
+
+            </div>
             )
           }
-        </button>
         <p>
           Group by
           <select onChange={handleGroupChange}>

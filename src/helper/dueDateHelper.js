@@ -48,9 +48,10 @@ const filterPerDueDate = (dueDateTodos) => {
     today = dueDateTodos.filter((todo) => dateDifference(todo.dueDate) === 0);
     tomorrow = dueDateTodos.filter((todo) => dateDifference(todo.dueDate) === -1);
     thisWeek = dueDateTodos.filter((todo) => checkThisWeek(todo.dueDate)
-    && !today.includes(todo) && !tomorrow.includes(todo));
+    && !today.includes(todo) && !tomorrow.includes(todo) && !late.includes(todo));
     nextWeek = dueDateTodos.filter((todo) => checkNextWeek(date, todo.dueDate)
-    && !today.includes(todo) && !tomorrow.includes(todo) && !thisWeek.includes(todo));
+    && !today.includes(todo) && !tomorrow.includes(todo) && !thisWeek.includes(todo)
+     && !late.includes(todo));
     future = dueDateTodos.filter((todo) => dateDifference(todo.dueDate) < -1
     && !thisWeek.includes(todo) && !nextWeek.includes(todo));
     noDueDate = dueDateTodos.filter((todo) => todo.dueDate === '');

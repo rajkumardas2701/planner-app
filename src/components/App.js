@@ -4,21 +4,37 @@ import ToDoList from '../containers/TodoList';
 import Header from './Header';
 import NavBar from '../layouts/NavBar';
 
+// const temp = [];
+
 const App = () => {
   const [view, setView] = useState('board');
   const [groupBy, setGroupBy] = useState('Progress');
+  const [filters, setFilters] = useState({
+    Late: false,
+    Today: false,
+    Tomorrow: false,
+    'This Week': false,
+    'Next Week': false,
+    Future: false,
+    'No date': false,
+    'Not started': false,
+    'In progress': false,
+    Completed: false,
+  });
   useEffect(() => {
     setView(view);
   }, [view]);
-  useEffect(() => {
-    setGroupBy(groupBy);
-  }, [groupBy]);
   return (
     <div className="App">
-      {/* {console.log('view state from App', view)} */}
+      {console.log('view filters from App', filters)}
       <NavBar />
-      <Header setView={setView} setGroupBy={setGroupBy} />
-      <ToDoList view={view} groupBy={groupBy} />
+      <Header
+        setView={setView}
+        setGroupBy={setGroupBy}
+        setFilters={setFilters}
+        filters={filters}
+      />
+      <ToDoList view={view} groupBy={groupBy} filters={filters} />
     </div>
   );
 };

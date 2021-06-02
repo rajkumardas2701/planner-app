@@ -10,12 +10,14 @@ import NextWeekView from './NextWeekView';
 import filterPerDueDate from '../helper/dueDateHelper';
 import '../styles/DueDateView.css';
 
+// const i = 0;
+
 const DueDateView = ({ setParentTask, currentToDos }) => {
   const [dueDateTodos, setDueDateTodos] = useState(currentToDos);
   useEffect(() => {
     setDueDateTodos(currentToDos);
   }, [currentToDos]);
-  console.log(dueDateTodos);
+  // console.log(dueDateTodos);
   const {
     late,
     today,
@@ -27,6 +29,8 @@ const DueDateView = ({ setParentTask, currentToDos }) => {
   } = filterPerDueDate(dueDateTodos);
   return (
     <div className="due-date-view-container">
+      {console.log('current todos in Due Date view', dueDateTodos)}
+      {/* {console.log('rendering count in Due Date view', i + 1)} */}
       <div>
         {/* {console.log('late list', late)} */}
         {

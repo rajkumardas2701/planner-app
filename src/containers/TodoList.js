@@ -3,22 +3,32 @@ import PropTypes from 'prop-types';
 import BoardView from '../components/BoardView';
 import ScheduleView from '../components/ScheduleView';
 import { todos } from '../helper/manageToDos';
+import filterTaskHelper from '../helper/filterTaskHelper';
 
-const ToDoList = ({ view, groupBy }) => {
+const ToDoList = ({ view, groupBy, filters }) => {
   const [parentTask, setParentTask] = useState({});
   const [allTasks, setAllTasks] = useState(todos);
+  const [currentFilters, setCurrentFilters] = useState(filters);
   useEffect(() => {
-    // console.log('testing', !Object.keys(parentTask).length === 0);
     if ('id' in parentTask) {
-      // console.log('testing', 'id' in parentTask);
       allTasks.push(parentTask);
       setAllTasks(allTasks);
       setParentTask({});
     }
   }, [parentTask]);
+  useEffect(() => {
+    setCurrentFilters(filters);
+  }, [filters]);
+  useEffect(() => {
+    // console.log(currentFilters);
+    // console.log(allTasks);
+    const filteredTask = filterTaskHelper(allTasks, currentFilters);
+    console.log('filtered in todoList', filteredTask);
+    // setAllTasks(filteredTask);
+  }, [currentFilters]);
   return (
     <div>
-      {/* {console.log('groupby in todolist', groupBy)} */}
+      {console.log('filters from ToDoList', currentFilters)}
       {console.log('view Alltask from todoList', allTasks)}
       {console.log('view parentTask from todoList', parentTask)}
       {
@@ -26,7 +36,6 @@ const ToDoList = ({ view, groupBy }) => {
             ? (<BoardView allTasks={allTasks} setParentTask={setParentTask} groupBy={groupBy} />)
             : (<ScheduleView />)
         }
-      {/* <BoardView /> */}
     </div>
   );
 };
@@ -34,6 +43,7 @@ const ToDoList = ({ view, groupBy }) => {
 ToDoList.propTypes = {
   view: PropTypes.string.isRequired,
   groupBy: PropTypes.string.isRequired,
+  filters: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };
 
 export default ToDoList;

@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { GROUPS, FILTERS } from '../constants/initialState';
 
-const Header = ({ setView, setGroupBy }) => {
+// const temp = [];
+const Header = (
+  {
+    setView, setGroupBy, setFilters, filters,
+  },
+) => {
   // set section is to highlight the selection board or schedule
   const [section, setSection] = useState('board');
   const [showFilters, setShowFilters] = useState(false);
@@ -45,8 +50,17 @@ const Header = ({ setView, setGroupBy }) => {
   //     setShowFilters(false);
   //   }
   // };
+  // console.log(setFilter);
+  const pickFilter = ({ target: { textContent } }) => {
+    if (filters[textContent] === false) {
+      setFilters({ ...filters, [textContent]: true });
+    } else {
+      setFilters({ ...filters, [textContent]: false });
+    }
+  };
   return (
     <div className="header-container">
+      {console.log('filters from Header', filters)}
       <div className="image-task">
         <div className="image">
           <p>Image</p>
@@ -80,7 +94,7 @@ const Header = ({ setView, setGroupBy }) => {
                  && (
                  <div className="progress-filters">
                    {
-                    FILTERS[1].map((progress) => <button type="button" key={progress} className="filter-btn">{progress}</button>)
+                    FILTERS[1].map((progress) => <button type="button" role="checkbox" aria-checked onClick={pickFilter} key={progress} className="filter-btn">{progress}</button>)
                   }
                  </div>
                  )
@@ -93,7 +107,7 @@ const Header = ({ setView, setGroupBy }) => {
                 && (
                   <div className="due-filters">
                     {
-                    FILTERS[0].map((due) => <button type="button" key={due} className="filter-btn">{due}</button>)
+                    FILTERS[0].map((due) => <button type="button" onClick={pickFilter} key={due} className="filter-btn">{due}</button>)
                   }
                   </div>
                 )
@@ -118,6 +132,8 @@ const Header = ({ setView, setGroupBy }) => {
 Header.propTypes = {
   setView: PropTypes.func,
   setGroupBy: PropTypes.func.isRequired,
+  setFilters: PropTypes.func.isRequired,
+  filters: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };
 
 Header.defaultProps = {

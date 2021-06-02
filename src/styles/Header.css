@@ -46,10 +46,10 @@
 .filter-container {
   display: flex;
   flex-direction: column;
-  /* overflow-y: hidden !important; */
   position: absolute;
   top: 163px;
   right: 385px;
+  width: 150px;
 }
 
 .progress-filters,
@@ -61,12 +61,6 @@
 .filter-btn {
   position: relative;
 }
-
-/* .filter-container {
-  position: absolute;
-  bottom: 198px;
-  right: 383px;
-} */
 
 .filter-title {
   font-weight: 700;

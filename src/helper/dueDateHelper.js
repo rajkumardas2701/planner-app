@@ -42,7 +42,7 @@ const checkThisWeek = (value) => {
   return date >= firstDayOfWeek && date <= lastDayofWeek;
 };
 
-const filterPerDueDate = (dueDateTodos) => {
+const fetchPerDueDate = (dueDateTodos) => {
   if (dueDateTodos.length > 0) {
     late = dueDateTodos.filter((todo) => dateDifference(todo.dueDate) > 0);
     today = dueDateTodos.filter((todo) => dateDifference(todo.dueDate) === 0);
@@ -67,4 +67,4 @@ const filterPerDueDate = (dueDateTodos) => {
   };
 };
 
-export default filterPerDueDate;
+export default fetchPerDueDate;

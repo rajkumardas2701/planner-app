@@ -7,10 +7,8 @@ import FutureView from './FutureView';
 import NoDueDateView from './NoDueDateView';
 import ThisWeekView from './ThisWeekView';
 import NextWeekView from './NextWeekView';
-import filterPerDueDate from '../helper/dueDateHelper';
+import fetchPerDueDate from '../helper/dueDateHelper';
 import '../styles/DueDateView.css';
-
-// const i = 0;
 
 const DueDateView = ({ setParentTask, currentToDos }) => {
   const [dueDateTodos, setDueDateTodos] = useState(currentToDos);
@@ -26,7 +24,7 @@ const DueDateView = ({ setParentTask, currentToDos }) => {
     nextWeek,
     future,
     noDueDate,
-  } = filterPerDueDate(dueDateTodos);
+  } = fetchPerDueDate(dueDateTodos);
   return (
     <div className="due-date-view-container">
       {console.log('current todos in Due Date view', dueDateTodos)}

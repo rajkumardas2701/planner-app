@@ -3,28 +3,35 @@ import PropTypes from 'prop-types';
 import BoardView from '../components/BoardView';
 import ScheduleView from '../components/ScheduleView';
 import { todos } from '../helper/manageToDos';
-import filterTaskHelper from '../helper/filterTaskHelper';
+import { filterTaskHelper, withNoFilter } from '../helper/filterTaskHelper';
 
 const ToDoList = ({ view, groupBy, filters }) => {
   const [parentTask, setParentTask] = useState({});
   const [allTasks, setAllTasks] = useState(todos);
   const [currentFilters, setCurrentFilters] = useState(filters);
+  console.log('TODOs Array', todos);
   useEffect(() => {
     if ('id' in parentTask) {
-      allTasks.push(parentTask);
-      setAllTasks(allTasks);
+      // allTasks.push(parentTask);
+      todos.push(parentTask);
+      // setAllTasks(allTasks);
+      const noFilterTasks = withNoFilter(todos);
+      setAllTasks(noFilterTasks);
       setParentTask({});
     }
   }, [parentTask]);
+  console.log('TODOs Array', todos);
   useEffect(() => {
     setCurrentFilters(filters);
   }, [filters]);
   useEffect(() => {
     // console.log(currentFilters);
     // console.log(allTasks);
-    const filteredTask = filterTaskHelper(allTasks, currentFilters);
-    console.log('filtered in todoList', filteredTask);
-    // setAllTasks(filteredTask);
+    const currentTasks = filterTaskHelper(todos, currentFilters);
+    console.log('filtered in todoList', currentTasks);
+    setAllTasks(currentTasks);
+    console.log('filtered in todoList', currentTasks);
+    setParentTask({});
   }, [currentFilters]);
   return (
     <div>

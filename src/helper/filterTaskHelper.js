@@ -46,7 +46,19 @@ const filterTaskHelper = (tasks, filters) => {
   };
   if (Object.values(filters).every((task) => task === false)) {
     console.log('inside task helper with all false', tasks);
-    return tasks;
+    // add here
+    const perProgress = fetchPerProgress(tasks);
+    const perDue = fetchPerDueDate(tasks);
+    for (let i = 0; i < DUEHELPERARR.length; i += 1) {
+      dueTasks[DUETASKARR[i]] = perDue[DUEHELPERARR[i]];
+    }
+    for (let i = 0; i < PROGRESSHELPERARR.length; i += 1) {
+      progressTasks[PROGRESSTASKARR[i]] = perProgress[PROGRESSHELPERARR[i]];
+    }
+    TaskList.push(dueTasks);
+    TaskList.push(progressTasks);
+    console.log('inside task helper without filters', TaskList);
+    return TaskList;
   }
   const perProgress = fetchPerProgress(tasks);
   const perDue = fetchPerDueDate(tasks);

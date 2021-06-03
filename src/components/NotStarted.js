@@ -17,7 +17,8 @@ const NotStarted = ({ setParentTask, notStartedTodos }) => {
       { showForm
       && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} /> }
       {
-        notStartedTodos.map((todo) => <Task todo={todo} key={todo.id} />)
+        (notStartedTodos && notStartedTodos.length > 0)
+        && (notStartedTodos.map((todo) => <Task todo={todo} key={todo.id} />))
       }
     </div>
   );

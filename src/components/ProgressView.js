@@ -9,15 +9,24 @@ import Completed from './Completed';
 const ProgressView = ({ setParentTask, currentToDos }) => {
   const [progressTodos, setProgressTodos] = useState(currentToDos);
   useEffect(() => {
-    setProgressTodos(progressTodos);
+    setProgressTodos(currentToDos);
   }, [currentToDos]);
+  // let notStartedTodos;
+  // let inProgressTodos;
+  // let completedTodos;
+  // if (currentToDos.length > 0) {
+  //   notStartedTodos = currentToDos.filter((todo) => todo.progress === 'Not started');
+  //   inProgressTodos = currentToDos.filter((todo) => todo.progress === 'In progress');
+  //   completedTodos = currentToDos.filter((todo) => todo.progress === 'Completed');
+  // }
+  console.log('Current Todos in ProgressView', currentToDos);
   let notStartedTodos;
   let inProgressTodos;
   let completedTodos;
-  if (currentToDos.length > 0) {
-    notStartedTodos = currentToDos.filter((todo) => todo.progress === 'Not started');
-    inProgressTodos = currentToDos.filter((todo) => todo.progress === 'In progress');
-    completedTodos = currentToDos.filter((todo) => todo.progress === 'Completed');
+  if (progressTodos[1]) {
+    notStartedTodos = progressTodos[1]['Not started'];
+    inProgressTodos = progressTodos[1]['In progress'];
+    completedTodos = progressTodos[1].Completed;
   }
   return (
     <div className="progress-view-container">
@@ -30,8 +39,8 @@ const ProgressView = ({ setParentTask, currentToDos }) => {
       <div className="progress-each">
         <Completed setParentTask={setParentTask} completedTodos={completedTodos} />
       </div>
-      {console.log('Current Todos in ProgressView', currentToDos)}
-      {console.log('progress Todos in ProgressView', progressTodos)}
+      {/* {console.log('Current Todos in ProgressView', currentToDos)} */}
+      {/* {console.log('progress Todos in ProgressView', progressTodos)} */}
     </div>
   );
 };

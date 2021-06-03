@@ -17,7 +17,8 @@ const Completed = ({ setParentTask, completedTodos }) => {
       { showForm
        && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} /> }
       {
-        completedTodos.map((todo) => <Task todo={todo} key={todo.id} />)
+      (completedTodos && completedTodos.length > 0)
+      && (completedTodos.map((todo) => <Task todo={todo} key={todo.id} />))
       }
     </div>
   );

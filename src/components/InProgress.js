@@ -17,7 +17,8 @@ const InProgress = ({ setParentTask, inProgressTodos }) => {
       { showForm
       && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} /> }
       {
-        inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />)
+        (inProgressTodos && inProgressTodos.length > 0)
+        && (inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />))
       }
     </div>
   );

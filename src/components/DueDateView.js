@@ -7,7 +7,7 @@ import FutureView from './FutureView';
 import NoDueDateView from './NoDueDateView';
 import ThisWeekView from './ThisWeekView';
 import NextWeekView from './NextWeekView';
-import fetchPerDueDate from '../helper/dueDateHelper';
+// import fetchPerDueDate from '../helper/dueDateHelper';
 import '../styles/DueDateView.css';
 
 const DueDateView = ({ setParentTask, currentToDos }) => {
@@ -16,15 +16,31 @@ const DueDateView = ({ setParentTask, currentToDos }) => {
     setDueDateTodos(currentToDos);
   }, [currentToDos]);
   // console.log(dueDateTodos);
-  const {
-    late,
-    today,
-    tomorrow,
-    thisWeek,
-    nextWeek,
-    future,
-    noDueDate,
-  } = fetchPerDueDate(dueDateTodos);
+  let late;
+  let today;
+  let tomorrow;
+  let thisWeek;
+  let nextWeek;
+  let future;
+  let noDueDate;
+  if (dueDateTodos[0]) {
+    late = dueDateTodos[0].Late;
+    today = dueDateTodos[0].Today;
+    tomorrow = dueDateTodos[0].Tomorrow;
+    thisWeek = dueDateTodos[0]['This Week'];
+    nextWeek = dueDateTodos[0]['Next Week'];
+    future = dueDateTodos[0].Future;
+    noDueDate = dueDateTodos[0]['No date'];
+  }
+  // const {
+  //   late,
+  //   today,
+  //   tomorrow,
+  //   thisWeek,
+  //   nextWeek,
+  //   future,
+  //   noDueDate,
+  // } = fetchPerDueDate(dueDateTodos);
   return (
     <div className="due-date-view-container">
       {console.log('current todos in Due Date view', dueDateTodos)}

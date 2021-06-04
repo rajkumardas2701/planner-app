@@ -14,6 +14,7 @@ const ToDoList = ({ view, groupBy, filters }) => {
     if ('id' in parentTask) {
       // allTasks.push(parentTask);
       todos.push(parentTask);
+      console.log('inside setParentTask of ToDoList');
       // setAllTasks(allTasks);
       const noFilterTasks = withNoFilter(todos);
       setAllTasks(noFilterTasks);
@@ -22,6 +23,7 @@ const ToDoList = ({ view, groupBy, filters }) => {
   }, [parentTask]);
   console.log('TODOs Array', todos);
   useEffect(() => {
+    console.log('inside useeffect of filters in ToDoList');
     setCurrentFilters(filters);
   }, [filters]);
   useEffect(() => {
@@ -30,7 +32,7 @@ const ToDoList = ({ view, groupBy, filters }) => {
     const currentTasks = filterTaskHelper(todos, currentFilters);
     console.log('filtered in todoList', currentTasks);
     setAllTasks(currentTasks);
-    console.log('filtered in todoList', currentTasks);
+    // console.log('filtered in todoList', currentTasks);
     setParentTask({});
   }, [currentFilters]);
   return (

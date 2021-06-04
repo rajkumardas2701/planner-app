@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AddTask from './AddTask';
 import Task from './Task';
 
-const TodayView = ({ setParentTask, today }) => {
+const TodayView = ({ setParentTask, today1 }) => {
   const [showForm, setShowForm] = useState(false);
   const handleClick = (e) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ const TodayView = ({ setParentTask, today }) => {
       { showForm
        && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
       {
-        today.map((todo) => <Task todo={todo} key={todo.id} />)
+        today1.map((todo) => <Task todo={todo} key={todo.id} />)
       }
     </div>
   );
@@ -24,11 +24,11 @@ const TodayView = ({ setParentTask, today }) => {
 
 TodayView.propTypes = {
   setParentTask: PropTypes.func.isRequired,
-  today: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  today1: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
 TodayView.defaultProps = {
-  today: [],
+  today1: [],
 };
 
 export default TodayView;

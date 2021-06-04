@@ -4,7 +4,7 @@ import AddTask from './AddTask';
 import Task from './Task';
 import '../styles/DueDateEach.css';
 
-const LateView = ({ setParentTask, late }) => {
+const LateView = ({ setParentTask, late1 }) => {
   const [showForm, setShowForm] = useState(false);
   const handleClick = (e) => {
     e.preventDefault();
@@ -17,7 +17,8 @@ const LateView = ({ setParentTask, late }) => {
       { showForm
        && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
       {
-        late.map((todo) => <Task todo={todo} key={todo.id} />)
+        (late1 && late1.length > 0)
+        && (late1.map((todo) => <Task todo={todo} key={todo.id} />))
       }
     </div>
   );
@@ -25,11 +26,11 @@ const LateView = ({ setParentTask, late }) => {
 
 LateView.propTypes = {
   setParentTask: PropTypes.func.isRequired,
-  late: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  late1: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };
 
-LateView.defaultProps = {
-  late: [],
-};
+// LateView.defaultProps = {
+//   late1: [],
+// };
 
 export default LateView;

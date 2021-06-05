@@ -1,5 +1,4 @@
 import '../styles/ProgressView.css';
-// import { useState } from 'react';
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import NotStarted from './NotStarted';
@@ -11,14 +10,6 @@ const ProgressView = ({ setParentTask, currentToDos }) => {
   useEffect(() => {
     setProgressTodos(currentToDos);
   }, [currentToDos]);
-  // let notStartedTodos;
-  // let inProgressTodos;
-  // let completedTodos;
-  // if (currentToDos.length > 0) {
-  //   notStartedTodos = currentToDos.filter((todo) => todo.progress === 'Not started');
-  //   inProgressTodos = currentToDos.filter((todo) => todo.progress === 'In progress');
-  //   completedTodos = currentToDos.filter((todo) => todo.progress === 'Completed');
-  // }
   console.log('Current Todos in ProgressView', currentToDos);
   let notStartedTodos;
   let inProgressTodos;
@@ -39,8 +30,6 @@ const ProgressView = ({ setParentTask, currentToDos }) => {
       <div className="progress-each">
         <Completed setParentTask={setParentTask} completedTodos={completedTodos} />
       </div>
-      {/* {console.log('Current Todos in ProgressView', currentToDos)} */}
-      {/* {console.log('progress Todos in ProgressView', progressTodos)} */}
     </div>
   );
 };

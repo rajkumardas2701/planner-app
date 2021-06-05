@@ -4,8 +4,6 @@ import ToDoList from '../containers/TodoList';
 import Header from './Header';
 import NavBar from '../layouts/NavBar';
 
-// const temp = [];
-
 const App = () => {
   const [view, setView] = useState('board');
   const [groupBy, setGroupBy] = useState('Progress');

@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import '../styles/DatePicker.css';
 
 const DatePicker = ({
-  showMonth, setShowMonth, showYear, setShowYear,
+  showMonth, setShowMonth, showYear, setShowYear, selectDate, setSelectDate,
 }) => {
   const [firstYear, setFirstYear] = useState(2020);
   const months = moment.monthsShort();
   const years = [];
+  let currentYear = moment(selectDate).year();
+  const month = moment(selectDate).month();
   for (let i = firstYear; i < firstYear + 12; i += 1) {
     years.push(i);
   }
@@ -17,9 +19,16 @@ const DatePicker = ({
     setShowMonth(!showMonth);
     setShowYear(!showYear);
   };
-    // if (i === firstYear + 12) {
-  //   setFirstYear(i);
-  // }
+  const upYear = () => {
+    currentYear -= 1;
+    console.log('Current Year in Date Picker', currentYear);
+    setSelectDate(moment(`1-${month + 1}-${currentYear}`, 'DD-MM-YYYY'));
+  };
+  const downYear = () => {
+    currentYear += 1;
+    console.log('Current Year in Date Picker', currentYear);
+    setSelectDate(moment(`1-${month + 1}-${currentYear}`, 'DD-MM-YYYY'));
+  };
   return (
     <div className="date-picker-section">
       <div className="select-nav-container">
@@ -28,12 +37,14 @@ const DatePicker = ({
           onClick={handleYearPanel}
           className="year-selector"
         >
-          select
+          {
+            moment(selectDate).year()
+          }
         </button>
-        <button type="button" className="year-nav">
+        <button type="button" className="year-nav" onClick={upYear}>
           -
         </button>
-        <button type="button" className="year-nav">
+        <button type="button" className="year-nav" onClick={downYear}>
           +
         </button>
       </div>
@@ -80,6 +91,8 @@ DatePicker.propTypes = {
   showYear: PropTypes.bool.isRequired,
   setShowYear: PropTypes.func.isRequired,
   setShowMonth: PropTypes.func.isRequired,
+  selectDate: PropTypes.oneOfType(Date).isRequired,
+  setSelectDate: PropTypes.func.isRequired,
 };
 
 export default DatePicker;

@@ -13,8 +13,6 @@ const CalendarHeader = ({ selectDate, setSelectDate }) => {
   const year = moment(selectDate).year();
 
   const prevMonth = () => {
-    // const month = moment(selectDate).month();
-    // const year = moment(selectDate).year();
     if (month === 0) {
       setSelectDate(moment(`1-12-${year - 1}`, 'DD-MM-YYYY'));
     } else {
@@ -76,6 +74,8 @@ const CalendarHeader = ({ selectDate, setSelectDate }) => {
            setShowMonth={setShowMonth}
            showYear={showYear}
            setShowYear={setShowYear}
+           selectDate={selectDate}
+           setSelectDate={setSelectDate}
          />
          )
       }

@@ -21,7 +21,12 @@ const DateIndicator = ({ selectDate, setSelectDate }) => {
       data-active-month={i.currentMonth}
       data-date={i.date.toString()}
     >
-      {getDayOfMonth(i.date)}
+      <div className="date-container">
+        <p className="date-label">
+          {getDayOfMonth(i.date)}
+        </p>
+        <div className="date-task">text</div>
+      </div>
     </td>
   ));
   const rows = [];

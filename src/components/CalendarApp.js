@@ -18,10 +18,14 @@ const CalendarApp = ({ allTasks }) => {
   return (
     <div>
       {console.log('All calendarEvents in Calendar App', allTasks)}
+      {console.log('SelectDate in CalendarApp', selectDate)}
       {/* {console.log('Days in Month', getDaysInMonth(6, 2021))}
       {console.log('firstday in Month', getFirstWeekdayOfMonth(6, 2021))} */}
       {console.log('days in Month', days)}
-      <CalendarHeader selectDate={selectDate} />
+      <CalendarHeader
+        selectDate={selectDate}
+        setSelectDate={setSelectDate}
+      />
       <table className="calendar-table">
         <tbody>
           <WeekdayIndicator />

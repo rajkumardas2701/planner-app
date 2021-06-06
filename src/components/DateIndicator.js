@@ -14,17 +14,38 @@ const DateIndicator = ({ selectDate, setSelectDate }) => {
     getYear(selectDate),
   );
   console.log(setSelectDate);
-  const monthDates = datesInMonth.map((i) => (
-    <div
+  const totalSlots = datesInMonth.map((i) => (
+    <td
+      className="date-icon"
       key={i.date.toISOString()}
+      data-active-month={i.currentMonth}
+      data-date={i.date.toString()}
     >
       {getDayOfMonth(i.date)}
-    </div>
+    </td>
   ));
+  const rows = [];
+  let cells = [];
+  totalSlots.forEach((data, i) => {
+    if (((i % 7 !== 0) || (i === 0)) && (i !== 41)) {
+      cells.push(data);
+    } else if (i === 41) {
+      cells.push(data);
+      rows.push(cells);
+      cells = [];
+    } else {
+      rows.push(cells);
+      cells = [];
+      cells.push(data);
+    }
+  });
+  const monthDates = rows.map((d) => <tr key={d}>{d}</tr>);
   return (
-    <div>
-      {monthDates}
-    </div>
+    <>
+      {
+        monthDates
+      }
+    </>
   );
 };
 

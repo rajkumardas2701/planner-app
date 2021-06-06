@@ -29,6 +29,14 @@ const DatePicker = ({
     console.log('Current Year in Date Picker', currentYear);
     setSelectDate(moment(`1-${month + 1}-${currentYear}`, 'DD-MM-YYYY'));
   };
+  const handleMonthClick = (e) => {
+    e.preventDefault();
+    const m = parseInt(moment().month(`${e.target.textContent}`).format('M'), 10);
+    setSelectDate(moment(`1-${m}-${currentYear}`, 'DD-MM-YYYY'));
+  };
+  const handleYearClick = () => {
+
+  };
   return (
     <div className="date-picker-section">
       <div className="select-nav-container">
@@ -50,28 +58,30 @@ const DatePicker = ({
       </div>
       <div className="year-container">
         {
-          showMonth
-          && (months.map((month) => (
-            <button
-              key={month}
-              type="button"
-              className="year-btn"
-            >
-              {month}
-            </button>
-          )))
-        }
-      </div>
-      <div className="month-container">
-        {
           showYear
           && (years.map((year) => (
             <button
               key={year}
               type="button"
               className="month-btn"
+              onClick={handleYearClick}
             >
               {year}
+            </button>
+          )))
+        }
+      </div>
+      <div className="month-container">
+        {
+          showMonth
+          && (months.map((month) => (
+            <button
+              key={month}
+              type="button"
+              className="year-btn"
+              onClick={handleMonthClick}
+            >
+              {month}
             </button>
           )))
         }

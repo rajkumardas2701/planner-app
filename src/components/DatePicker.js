@@ -34,8 +34,10 @@ const DatePicker = ({
     const m = parseInt(moment().month(`${e.target.textContent}`).format('M'), 10);
     setSelectDate(moment(`1-${m}-${currentYear}`, 'DD-MM-YYYY'));
   };
-  const handleYearClick = () => {
-
+  const handleYearClick = (e) => {
+    e.preventDefault();
+    const y = parseInt(moment().year(`${e.target.textContent}`).format('YYYY'), 10);
+    setSelectDate(moment(`1-${month + 1}-${y}`, 'DD-MM-YYYY'));
   };
   return (
     <div className="date-picker-section">

@@ -43,7 +43,7 @@ const ToDoList = ({ view, groupBy, filters }) => {
       {
           (view === 'board')
             ? (<BoardView allTasks={allTasks} setParentTask={setParentTask} groupBy={groupBy} />)
-            : (<ScheduleView />)
+            : (<ScheduleView allTasks={allTasks} />)
         }
     </div>
   );

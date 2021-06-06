@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import '../styles/CalendarHeader.css';
+import DatePicker from './DatePicker';
 
 const CalendarHeader = ({ selectDate, setSelectDate }) => {
+  const [showSelector, setShowSelector] = useState(false);
+  const [showMonth, setShowMonth] = useState(false);
+  const [showYear, setShowYear] = useState(false);
   // const date = moment(selectDate).date();
   const month = moment(selectDate).month();
   const year = moment(selectDate).year();
@@ -27,6 +31,10 @@ const CalendarHeader = ({ selectDate, setSelectDate }) => {
       setSelectDate(moment(`1-${newMonth + 1}-${year}`, 'DD-MM-YYYY'));
     }
   };
+  const handleDatePicker = () => {
+    setShowSelector(!showSelector);
+    setShowMonth(!showMonth);
+  };
   return (
     <div className="calendar-header">
       <div className="left-container">
@@ -36,11 +44,18 @@ const CalendarHeader = ({ selectDate, setSelectDate }) => {
         <button type="button" onClick={nextMonth}>
           {'>'}
         </button>
-        <p>
-          {moment(selectDate).format('MMMM')}
-          {' '}
-          {moment(selectDate).year()}
-        </p>
+        <div className="date-selector">
+          <button
+            type="button"
+            onClick={handleDatePicker}
+          >
+            {moment(selectDate).format('MMMM')}
+            {' '}
+            {moment(selectDate).year()}
+            {' '}
+            {'>'}
+          </button>
+        </div>
       </div>
       <div className="right-container">
         <button type="button">
@@ -53,7 +68,17 @@ const CalendarHeader = ({ selectDate, setSelectDate }) => {
       {/* {console.log('selectDate', selectDate)}
       {console.log('month', moment(selectDate).month())}
       {console.log('SetselectDate', setSelectDate)} */}
-
+      {
+        showSelector
+         && (
+         <DatePicker
+           showMonth={showMonth}
+           setShowMonth={setShowMonth}
+           showYear={showYear}
+           setShowYear={setShowYear}
+         />
+         )
+      }
     </div>
   );
 };

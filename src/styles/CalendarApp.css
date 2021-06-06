@@ -1,0 +1,14 @@
+.week-day {
+  width: 14%;
+}
+
+/* .header-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+} */
+
+.calendar-table {
+  width: 100%;
+}

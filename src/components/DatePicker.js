@@ -38,6 +38,8 @@ const DatePicker = ({
     e.preventDefault();
     const y = parseInt(moment().year(`${e.target.textContent}`).format('YYYY'), 10);
     setSelectDate(moment(`1-${month + 1}-${y}`, 'DD-MM-YYYY'));
+    setShowYear(!showYear);
+    setShowMonth(!showMonth);
   };
   const handleTodayBtn = () => {
     setSelectDate(moment());

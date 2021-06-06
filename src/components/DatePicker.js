@@ -39,6 +39,9 @@ const DatePicker = ({
     const y = parseInt(moment().year(`${e.target.textContent}`).format('YYYY'), 10);
     setSelectDate(moment(`1-${month + 1}-${y}`, 'DD-MM-YYYY'));
   };
+  const handleTodayBtn = () => {
+    setSelectDate(moment());
+  };
   return (
     <div className="date-picker-section">
       <div className="select-nav-container">
@@ -91,6 +94,7 @@ const DatePicker = ({
       <button
         type="button"
         className="today-btn"
+        onClick={handleTodayBtn}
       >
         Today
       </button>

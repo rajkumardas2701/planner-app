@@ -87,16 +87,52 @@ const CalendarHeader = ({
                 {'>'}
               </button>
               <div className="date-selector">
-                <button
-                  type="button"
-                  onClick={handleDatePicker}
-                >
-                  {moment(selectDate).format('MMMM')}
-                  {' '}
-                  {moment(selectDate).year()}
-                  {' '}
-                  {'>'}
-                </button>
+
+                {
+                    (moment(selectDate).startOf('week').format('MMM')
+                    === moment(selectDate).endOf('week').format('MMM'))
+                      ? (
+                        <button
+                          type="button"
+                          onClick={handleDatePicker}
+                        >
+                          {moment(selectDate).startOf('week').format('MMM')}
+                          {' '}
+                          {moment(selectDate).startOf('week').format('D')}
+                          {' '}
+                          -
+                          {' '}
+                          {moment(selectDate).endOf('week').format('D')}
+                          ,
+                          {' '}
+                          {moment(selectDate).year()}
+                          {' '}
+                          {'>'}
+                        </button>
+                      )
+                      : (
+                        <button
+                          type="button"
+                          onClick={handleDatePicker}
+                        >
+                          {moment(selectDate).startOf('week').format('MMM')}
+                          {' '}
+                          {moment(selectDate).startOf('week').format('D')}
+                          {' '}
+                          -
+                          {' '}
+                          {moment(selectDate).endOf('week').format('MMM')}
+                          {' '}
+                          {moment(selectDate).endOf('week').format('D')}
+                          ,
+                          {' '}
+                          {moment(selectDate).year()}
+                          {' '}
+                          {'>'}
+                        </button>
+                      )
+                  }
+
               </div>
             </div>
           )

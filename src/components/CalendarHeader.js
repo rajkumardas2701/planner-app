@@ -30,6 +30,16 @@ const CalendarHeader = ({
       setSelectDate(moment(`1-${newMonth + 1}-${year}`, 'DD-MM-YYYY'));
     }
   };
+  const prevWeek = () => {
+    const fromDate = moment(selectDate).startOf('week');
+    const newDate = moment(fromDate).subtract(7, 'days');
+    setSelectDate(newDate);
+  };
+  const nextWeek = () => {
+    const fromDate = moment(selectDate).startOf('week');
+    const newDate = moment(fromDate).add(7, 'days');
+    setSelectDate(newDate);
+  };
   const handleDatePicker = () => {
     setShowSelector(!showSelector);
     setShowMonth(!showMonth);
@@ -69,11 +79,11 @@ const CalendarHeader = ({
             </div>
           )
           : (
-            <div className="left-container-month-view">
-              <button type="button" onClick={prevMonth}>
+            <div className="left-container-week-view">
+              <button type="button" onClick={prevWeek}>
                 {'<'}
               </button>
-              <button type="button" onClick={nextMonth}>
+              <button type="button" onClick={nextWeek}>
                 {'>'}
               </button>
               <div className="date-selector">

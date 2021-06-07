@@ -6,14 +6,9 @@ import '../styles/WeekIndicator.css';
 
 const WeekIndicator = ({ selectDate, setSelectDate }) => {
   const dates = enumerateDaysInWeek(selectDate);
-
-  // useEffect(() => {
-  //   setSelectDate(selectDate);
-  //   console.log('dates in weekIndicator', dates);
-  // }, []);
   console.log(setSelectDate);
-  console.log(selectDate);
-  console.log('dates', dates);
+  // console.log(selectDate);
+  // console.log('dates', dates);
   return (
     <tr className="week-container">
       {

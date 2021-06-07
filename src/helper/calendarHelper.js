@@ -72,12 +72,6 @@ const enumerateDaysInWeek = (selectDate) => {
   let fromDate = moment(selectDate).startOf('week');
   const toDate = moment(selectDate).endOf('week');
   const results = [];
-  console.log('fromDate', fromDate);
-  console.log('toDate', toDate);
-  // while (fromDate.isSameOrBefore(toDate)) {
-  //   results.push(fromDate);
-  //   fromDate.add(1, 'days');
-  // }
   while (fromDate <= toDate) {
     results.push(fromDate);
     fromDate = moment(fromDate).add(1, 'days');

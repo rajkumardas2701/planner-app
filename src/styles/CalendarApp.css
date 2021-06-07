@@ -16,7 +16,7 @@
 
 .date-container {
   display: flex;
-  flex: column;
+  flex-direction: column;
   border: 1px solid black;
   height: 170px;
 }

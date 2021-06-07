@@ -60,12 +60,9 @@
 
 .filter-btn {
   position: relative;
+  text-align: left;
 }
 
 .filter-title {
   font-weight: 700;
-}
-
-.filter-btn {
-  text-align: left;
 }

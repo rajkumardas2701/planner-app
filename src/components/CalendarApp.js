@@ -1,30 +1,53 @@
-import React from 'react';
-// , { useState, useEffect }
-import { Calendar, momentLocalizer } from 'react-big-calendar';
+import React, { useState } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import arrOfEvents from '../helper/arrOfEvents';
-import '../../node_modules/react-big-calendar/lib/sass/styles.scss';
+// import arrOfEvents from '../helper/arrOfEvents';
+import '../styles/CalendarApp.css';
+import { getDatesInMonthDisplay } from '../helper/calendarHelper';
+import CalendarHeader from './CalendarHeader';
+import WeekdayIndicator from './WeekdayIndicator';
+import DateIndicator from './DateIndicator';
+import WeekIndicator from './WeekIndicator';
 
-const localizer = momentLocalizer(moment);
+// const localizer = momentLocalizer(moment);
 
 const CalendarApp = ({ allTasks }) => {
-  const events = arrOfEvents(allTasks);
-  // const [calendarEvents, setCalendarEvents] = useState(events);
-  // useEffect(() => {
-  //   events = arrOfEvents(allTasks);
-  //   setCalendarEvents(events);
-  // }, [allTasks]);
+  const [selectDate, setSelectDate] = useState(moment().toDate());
+  const [calendarView, setCalendarView] = useState('month');
+  // console.log(setSelectDate);
+  const days = getDatesInMonthDisplay(6, 2021);
   return (
     <div>
-      {console.log('All calendarEvents in Calendar App', events)}
-      <Calendar
-        localizer={localizer}
-        events={events}
-        startAccessor="start"
-        endAccessor="end"
-        style={{ height: 1100 }}
+      {console.log('All calendarEvents in Calendar App', allTasks)}
+      {console.log('SelectDate in CalendarApp', selectDate)}
+      {/* {console.log('Days in Month', getDaysInMonth(6, 2021))}
+      {console.log('firstday in Month', getFirstWeekdayOfMonth(6, 2021))} */}
+      {console.log('days in Month', days)}
+      <CalendarHeader
+        selectDate={selectDate}
+        setSelectDate={setSelectDate}
+        setCalendarView={setCalendarView}
+        calendarView={calendarView}
       />
+      <table className="calendar-table">
+        <tbody className="calendar-body">
+          <WeekdayIndicator />
+          {
+            calendarView === 'month' ? (
+              <DateIndicator
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+              />
+            ) : (
+              <WeekIndicator
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+              />
+            )
+          }
+
+        </tbody>
+      </table>
     </div>
   );
 };

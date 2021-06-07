@@ -6,7 +6,7 @@ import {
   getMonth,
   getYear,
 } from '../helper/moment-helper';
-import getDatesInMonthDisplay from '../helper/calendarHelper';
+import { getDatesInMonthDisplay } from '../helper/calendarHelper';
 
 const DateIndicator = ({ selectDate, setSelectDate }) => {
   const datesInMonth = getDatesInMonthDisplay(

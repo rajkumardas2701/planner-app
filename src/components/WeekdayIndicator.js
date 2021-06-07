@@ -1,4 +1,5 @@
 import moment from 'moment';
+import '../styles/WeekdayIndicator.css';
 
 const WeekdayIndicator = () => {
   const weekdays = moment.weekdays();

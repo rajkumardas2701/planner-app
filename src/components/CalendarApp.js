@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 // import arrOfEvents from '../helper/arrOfEvents';
-// import '../../node_modules/react-big-calendar/lib/sass/styles.scss';
 import '../styles/CalendarApp.css';
-import getDatesInMonthDisplay from '../helper/calendarHelper';
+import { getDatesInMonthDisplay } from '../helper/calendarHelper';
 import CalendarHeader from './CalendarHeader';
-import WeekdayIndicator from './CalendarWeekdays';
+import WeekdayIndicator from './WeekdayIndicator';
 import DateIndicator from './DateIndicator';
+import WeekIndicator from './WeekIndicator';
 
 // const localizer = momentLocalizer(moment);
 
 const CalendarApp = ({ allTasks }) => {
   const [selectDate, setSelectDate] = useState(moment().toDate());
+  const [calendarView, setCalendarView] = useState('month');
   // console.log(setSelectDate);
   const days = getDatesInMonthDisplay(6, 2021);
   return (
@@ -25,14 +26,26 @@ const CalendarApp = ({ allTasks }) => {
       <CalendarHeader
         selectDate={selectDate}
         setSelectDate={setSelectDate}
+        setCalendarView={setCalendarView}
+        calendarView={calendarView}
       />
       <table className="calendar-table">
-        <tbody>
+        <tbody className="calendar-body">
           <WeekdayIndicator />
-          <DateIndicator
-            selectDate={selectDate}
-            setSelectDate={setSelectDate}
-          />
+          {
+            calendarView === 'month' ? (
+              <DateIndicator
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+              />
+            ) : (
+              <WeekIndicator
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+              />
+            )
+          }
+
         </tbody>
       </table>
     </div>

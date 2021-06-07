@@ -23,7 +23,7 @@ const ToDoList = ({ view, groupBy, filters }) => {
   }, [parentTask]);
   console.log('TODOs Array', todos);
   useEffect(() => {
-    console.log('inside useeffect of filters in ToDoList');
+    // console.log('inside useeffect of filters in ToDoList');
     setCurrentFilters(filters);
   }, [filters]);
   useEffect(() => {

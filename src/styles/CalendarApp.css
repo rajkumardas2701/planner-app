@@ -21,9 +21,9 @@
   height: 170px;
 }
 
-/* .date-task {
-  margin-top: 50px;
-  width: 100%;
+/* .calendar-body {
+  display: flex;
+  flex-direction: column;
 } */
 
 .date-label {

@@ -83,16 +83,29 @@ const getDatesAndEvents = (month, year, events) => {
   } return results;
 };
 
-const enumerateDaysInWeek = (selectDate) => {
+const enumerateDaysInWeek = (selectDate, events) => {
   let fromDate = moment(selectDate).startOf('week');
   const toDate = moment(selectDate).endOf('week');
   const results = [];
+  // const eventInDays = [];
   while (fromDate <= toDate) {
-    results.push(fromDate);
+    results.push({
+      date: fromDate.toDate(),
+      dayEvents: [],
+    });
+
     fromDate = moment(fromDate).add(1, 'days');
   }
   console.log('results', results);
-  return results;
+  // return results;
+  for (let i = 0; i < results.length; i += 1) {
+    for (let j = 0; j < events.length; j += 1) {
+      // console.log('Date format in helper', moment(events[j].dueDate, 'YYYY-MM-DD').toDate());
+      if (`${results[i].date}` === `${moment(events[j].dueDate).toDate()}`) {
+        results[i].dayEvents.push(events[j]);
+      }
+    }
+  } return results;
 };
 
 export { getDatesInMonthDisplay, enumerateDaysInWeek, getDatesAndEvents };

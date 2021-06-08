@@ -41,6 +41,7 @@ const CalendarApp = ({ allTasks }) => {
               <WeekIndicator
                 selectDate={selectDate}
                 setSelectDate={setSelectDate}
+                events={events}
               />
             )
           }

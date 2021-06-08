@@ -1,28 +1,26 @@
 import React, { useState } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-// import arrOfEvents from '../helper/arrOfEvents';
+import arrOfEvents from '../helper/arrOfEvents';
 import '../styles/CalendarApp.css';
-import { getDatesInMonthDisplay } from '../helper/calendarHelper';
+// import { getDatesInMonthDisplay } from '../helper/calendarHelper';
 import CalendarHeader from './CalendarHeader';
 import WeekdayIndicator from './WeekdayIndicator';
 import DateIndicator from './DateIndicator';
 import WeekIndicator from './WeekIndicator';
 
-// const localizer = momentLocalizer(moment);
-
 const CalendarApp = ({ allTasks }) => {
   const [selectDate, setSelectDate] = useState(moment().toDate());
   const [calendarView, setCalendarView] = useState('month');
   // console.log(setSelectDate);
-  const days = getDatesInMonthDisplay(6, 2021);
+  const events = arrOfEvents(allTasks);
   return (
     <div>
       {console.log('All calendarEvents in Calendar App', allTasks)}
-      {console.log('SelectDate in CalendarApp', selectDate)}
+      {/* {console.log('SelectDate in CalendarApp', selectDate)} */}
       {/* {console.log('Days in Month', getDaysInMonth(6, 2021))}
       {console.log('firstday in Month', getFirstWeekdayOfMonth(6, 2021))} */}
-      {console.log('days in Month', days)}
+      {console.log('arr of events', events)}
       <CalendarHeader
         selectDate={selectDate}
         setSelectDate={setSelectDate}
@@ -37,6 +35,7 @@ const CalendarApp = ({ allTasks }) => {
               <DateIndicator
                 selectDate={selectDate}
                 setSelectDate={setSelectDate}
+                events={events}
               />
             ) : (
               <WeekIndicator

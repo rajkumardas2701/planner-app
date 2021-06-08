@@ -1,5 +1,6 @@
 const arrOfEvents = (events) => {
   const eventlist = [];
+  const existing = [];
   console.log('Events inside helper', events);
   const eventcategories = [
     ['Late',
@@ -25,13 +26,16 @@ const arrOfEvents = (events) => {
         for (let k = 0; k < events[i][eventcategories[i][j]].length; k += 1) {
           console.log(events[i][eventcategories[i][j]][k]);
           const obj = events[i][eventcategories[i][j]][k];
-          const instance = {
-            title: obj.name,
-            start: obj.dueDate,
-            end: obj.dueDate,
-            allDay: true,
-          };
-          eventlist.push(instance);
+          // const instance = {
+          //   title: obj.name,
+          //   start: obj.dueDate,
+          //   end: obj.dueDate,
+          //   allDay: true,
+          // };
+          if (!existing.includes(obj.id)) {
+            existing.push(obj.id);
+            eventlist.push(obj);
+          }
         }
       }
     }
@@ -39,6 +43,5 @@ const arrOfEvents = (events) => {
   console.log('Eventlist', eventlist);
   return eventlist;
 };
-// [eventcategories[i][j]].length
 
 export default arrOfEvents;

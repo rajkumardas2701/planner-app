@@ -6,15 +6,17 @@ import {
   getMonth,
   getYear,
 } from '../helper/moment-helper';
-import { getDatesInMonthDisplay } from '../helper/calendarHelper';
+import { getDatesAndEvents } from '../helper/calendarHelper';
 
-const DateIndicator = ({ selectDate, setSelectDate }) => {
-  const datesInMonth = getDatesInMonthDisplay(
+const DateIndicator = ({ selectDate, setSelectDate, events }) => {
+  const datesAndEvents = getDatesAndEvents(
     getMonth(selectDate) + 1,
     getYear(selectDate),
+    events,
   );
   console.log(setSelectDate);
-  const totalSlots = datesInMonth.map((i) => (
+  console.log('dayEvents in DateIndicator', datesAndEvents);
+  const totalSlots = datesAndEvents.map((i) => (
     <td
       className="date-icon"
       key={i.date.toISOString()}
@@ -25,7 +27,11 @@ const DateIndicator = ({ selectDate, setSelectDate }) => {
         <p className="date-label">
           {getDayOfMonth(i.date)}
         </p>
-        <div className="date-task">text</div>
+        <div className="date-task">
+          {
+            i.dayEvents.map((event) => <p key={event.id}>{event.name}</p>)
+          }
+        </div>
       </div>
     </td>
   ));
@@ -57,6 +63,7 @@ const DateIndicator = ({ selectDate, setSelectDate }) => {
 DateIndicator.propTypes = {
   selectDate: PropTypes.instanceOf(Date).isRequired,
   setSelectDate: PropTypes.func.isRequired,
+  events: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };
 
 export default DateIndicator;

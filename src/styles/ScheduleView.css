@@ -1,0 +1,15 @@
+.schedule-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.calendar-section {
+  width: 80%;
+  border: 1px solid black;
+}
+
+.no-due-section {
+  width: 15%;
+  border: 1px solid black;
+}

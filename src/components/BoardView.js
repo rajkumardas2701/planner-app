@@ -17,6 +17,7 @@ const BoardView = ({ allTasks, setParentTask, groupBy }) => {
   //   setShowForm(!showForm);
   // };
   // setCurrentToDos(allTasks);
+  const classN = 'progress-view-container';
   return (
     <div>
       <h3>Board view</h3>
@@ -31,7 +32,11 @@ const BoardView = ({ allTasks, setParentTask, groupBy }) => {
           {
             (groupBy === 'Progress')
               ? (
-                <ProgressView setParentTask={setParentTask} currentToDos={allTasks} />
+                <ProgressView
+                  setParentTask={setParentTask}
+                  currentToDos={allTasks}
+                  classN={classN}
+                />
               )
               : (
                 <DueDateView setParentTask={setParentTask} currentToDos={allTasks} />

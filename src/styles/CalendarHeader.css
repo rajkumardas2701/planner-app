@@ -1,0 +1,10 @@
+.left-container-month-view,
+.left-container-week-view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.date-selector {
+  position: relative;
+}

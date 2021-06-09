@@ -1,0 +1,32 @@
+.week-day {
+  width: 14%;
+}
+
+.calendar-table {
+  width: 100%;
+  height: 1050px;
+}
+
+.calendar-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  height: 170px;
+}
+
+/* .calendar-body {
+  display: flex;
+  flex-direction: column;
+} */
+
+.date-label {
+  width: 99%;
+  margin: 0 auto;
+}

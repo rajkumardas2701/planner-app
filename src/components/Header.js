@@ -64,10 +64,10 @@ const Header = (
     e.preventDefault();
     setShowDue(!showDue);
     const element = document.getElementById('fa-angle-down-due');
-    if (document.getElementsByClassName('angle-down-reverse').length > 0 ) {
-      element.classList.remove('angle-down-reverse')
+    if (document.getElementsByClassName('angle-down-reverse-due').length > 0 ) {
+      element.classList.remove('angle-down-reverse-due')
     } else {
-      element.classList.add('angle-down-reverse');
+      element.classList.add('angle-down-reverse-due');
     }
   };
   // window.onclick = (e) => {

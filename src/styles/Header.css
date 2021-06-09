@@ -2,28 +2,56 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 150px;
+  height: 80px;
   justify-content: space-between;
   align-items: center;
   background-color: burlywood;
 }
 
-.view-section,
-.user-details,
+.view-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 10%;
+  /* border: 1px solid black; */
+  margin-left: 40px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 25%;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.user-details > img {
+  border-radius: 15px;
+}
+
+.user-details > p {
+  margin-top: 4px;
+  margin-bottom: 0px;
+}
+
 .categories-section {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 30%;
-  border: 1px solid black;
+  width: 50%;
+  height: 30px;
+  align-items: center;
 }
 
-.categories-section {
-  align-items: center;
+.categories-section > p {
+  margin: 0 auto;
 }
 
 .title-text {
   width: 60%;
+  height: 30px;
+  margin-top: -12px;
 }
 
 .image-task {
@@ -37,17 +65,31 @@
 .image {
   background-color: red;
   padding: 15px 10px;
+  width: 40px;
+  height: 30px;
+}
+
+.image > p {
+  margin: 5px 0 0 5px;
 }
 
 .main-title {
   font-size: 20px;
+  font-weight: 500;
+  margin: 0px auto;
+}
+
+.sub-title {
+  font-size: 12px;
+  margin-top: -3px;
+  margin-bottom: 0px;
 }
 
 .filter-container {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 163px;
+  top: 100px;
   right: 385px;
   width: 150px;
 }
@@ -61,8 +103,38 @@
 .filter-btn {
   position: relative;
   text-align: left;
+  margin-left: 10px;
 }
 
 .filter-title {
   font-weight: 700;
+}
+
+.board-button,
+.schedule-button {
+  height: 40px;
+  border: 0px;
+  margin: 2px;
+}
+
+.board-button:hover,
+.schedule-button:hover {
+  border-bottom: 2px solid green;
+}
+
+.board-schedule-click {
+  border-bottom: 2px solid green;
+}
+
+.header-right-section {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 640px;
+  justify-content: center;
+  align-items: center;
+}
+
+.groupby-dropdown {
+  margin-left: 10px;
 }

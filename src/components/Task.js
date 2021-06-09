@@ -26,7 +26,7 @@ const Task = ({ todo }) => (
       progress
       {todo.progress}
     </li>
-    {console.log('from task component', todo)}
+    {/* {console.log('from task component', todo)} */}
   </ul>
 );
 

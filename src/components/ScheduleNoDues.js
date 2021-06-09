@@ -10,8 +10,8 @@ const ScheduleNoDues = ({ allTasks, groupBy, setParentTask }) => {
     e.preventDefault();
     setShowForm(!showForm);
   };
-  console.log(allTasks);
-  console.log(groupBy);
+  // console.log(allTasks);
+  // console.log(groupBy);
   return (
     <div>
       <h4>Unscheduled tasks</h4>

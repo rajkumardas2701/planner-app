@@ -8,7 +8,7 @@ const WeekIndicator = ({ selectDate, setSelectDate, events }) => {
   const dates = enumerateDaysInWeek(selectDate, events);
   console.log(setSelectDate);
   // console.log(selectDate);
-  console.log('dates in weekIndicator', dates);
+  // console.log('dates in weekIndicator', dates);
   return (
     <tr className="week-container">
       {

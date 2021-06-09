@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 import CalendarApp from './CalendarApp';
 import ScheduleNoDues from './ScheduleNoDues';
 import '../styles/ScheduleView.css';

@@ -1,6 +1,6 @@
 import '../styles/Header.css';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GROUPS, FILTERS } from '../constants/initialState';
 
 const Header = (
@@ -53,10 +53,22 @@ const Header = (
   const handleProgressList = (e) => {
     e.preventDefault();
     setShowProgress(!showProgress);
+    const element = document.getElementById('fa-angle-down');
+    if (document.getElementsByClassName('angle-down-reverse').length > 0 ) {
+      element.classList.remove('angle-down-reverse')
+    } else {
+      element.classList.add('angle-down-reverse');
+    }
   };
   const handleDueList = (e) => {
     e.preventDefault();
     setShowDue(!showDue);
+    const element = document.getElementById('fa-angle-down-due');
+    if (document.getElementsByClassName('angle-down-reverse').length > 0 ) {
+      element.classList.remove('angle-down-reverse')
+    } else {
+      element.classList.add('angle-down-reverse');
+    }
   };
   // window.onclick = (e) => {
   //   // console.log(e.target.className);
@@ -98,7 +110,7 @@ const Header = (
           <p>Rajkumar Das</p>
         </div>
         <div className="categories-section">
-          <button type="button" onClick={handleFilterClick} className="filter-btn">
+          <button type="button" onClick={handleFilterClick} className="filter-btn-main">
             <p>
               Filter (
               {filterCount}
@@ -110,27 +122,41 @@ const Header = (
               && (
               <div className="filter-container">
                 <button type="button" className="filter-title filter-btn" onClick={handleProgressList}>
-                  Progress
+                  <p>Progress</p>
+                  <div><i class="fas fa-angle-down" id="fa-angle-down" /></div>
                 </button>
                 {
                   showProgress
                   && (
                   <div className="progress-filters">
                     {
-                      FILTERS[1].map((progress) => <button type="button" role="checkbox" aria-checked onClick={pickFilter} key={progress} className="filter-btn">{progress}</button>)
+                      FILTERS[1].map((progress) => (
+                        <button type="button" role="checkbox" aria-checked onClick={pickFilter} key={progress} className="filter-btn btn-check filter-style">
+                          <div>
+                            {progress}
+                          </div>
+                          {(filters[progress] && <div><i className="fas fa-check icon-style" /></div>)}
+                        </button>
+                      ))
                     }
                   </div>
                   )
                 }
                 <button type="button" className="filter-title filter-btn" onClick={handleDueList}>
-                  Due
+                  <p>Due</p>
+                  <div><i class="fas fa-angle-down" id="fa-angle-down-due" /></div>
                 </button>
                 {
                   showDue
                   && (
                     <div className="due-filters">
                       {
-                      FILTERS[0].map((due) => <button type="button" onClick={pickFilter} key={due} className="filter-btn">{due}</button>)
+                      FILTERS[0].map((due) => (
+                        <button type="button" onClick={pickFilter} key={due} className="filter-btn btn-check filter-style">
+                          <div>{due}</div>
+                          {filters[due] && <div><i className="fas fa-check icon-style" /></div>}
+                        </button>
+                      ))
                     }
                     </div>
                   )

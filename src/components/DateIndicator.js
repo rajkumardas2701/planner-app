@@ -52,11 +52,11 @@ const DateIndicator = ({ selectDate, setSelectDate, events }) => {
   });
   const monthDates = rows.map((d) => <tr key={d}>{d}</tr>);
   return (
-    <>
+    <div>
       {
         monthDates
       }
-    </>
+    </div>
   );
 };
 

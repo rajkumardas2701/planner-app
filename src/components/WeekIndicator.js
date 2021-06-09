@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 // import { useEffect } from 'react';
 import { enumerateDaysInWeek } from '../helper/calendarHelper';
 // import moment from 'moment';

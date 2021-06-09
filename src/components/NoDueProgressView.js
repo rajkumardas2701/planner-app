@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 import ProgressView from './ProgressView';
 import filterProgressViewWithNoDueDate from '../helper/filterProgressViewWithNoDueDate';
 

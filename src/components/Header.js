@@ -115,6 +115,7 @@ const Header = (
               {filterCount}
               )
             </p>
+            <i className="fas fa-angle-down filter-icon" />
           </button>
           {
               showFilters

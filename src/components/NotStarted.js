@@ -48,15 +48,17 @@ const NotStarted = ({ setParentTask, notStartedTodos, classN }) => {
           && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} />
       }
       </div>
-      {
-        (classN === 'progress-view-container')
-          ? (
-            (notStartedTodos && notStartedTodos.length > 0)
-          && (notStartedTodos.map((todo) => <Task todo={todo} key={todo.id} />))
-          )
-          : (showTask && (notStartedTodos && notStartedTodos.length > 0)
-        && (notStartedTodos.map((todo) => <Task todo={todo} key={todo.id} />)))
-      }
+        <div className="progress-view-alltasks">
+        {
+          (classN === 'progress-view-container')
+            ? (
+              (notStartedTodos && notStartedTodos.length > 0)
+            && (notStartedTodos.map((todo) => <Task todo={todo} key={todo.id} />))
+            )
+            : (showTask && (notStartedTodos && notStartedTodos.length > 0)
+          && (notStartedTodos.map((todo) => <Task todo={todo} key={todo.id} />)))
+        }
+        </div>
     </div>
   );
 };

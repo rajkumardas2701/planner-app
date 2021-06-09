@@ -47,16 +47,17 @@ const Completed = ({ setParentTask, completedTodos, classN }) => {
       { showForm
        && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} /> }
       </div>
-      
-      {
-        (classN === 'progress-view-container')
-          ? (
-            (completedTodos && completedTodos.length > 0)
-      && (completedTodos.map((todo) => <Task todo={todo} key={todo.id} />))
-          )
-          : (showTask && (completedTodos && completedTodos.length > 0)
-        && (completedTodos.map((todo) => <Task todo={todo} key={todo.id} />)))
-      }
+      <div className="progress-view-alltasks">
+        {
+          (classN === 'progress-view-container')
+            ? (
+              (completedTodos && completedTodos.length > 0)
+        && (completedTodos.map((todo) => <Task todo={todo} key={todo.id} />))
+            )
+            : (showTask && (completedTodos && completedTodos.length > 0)
+          && (completedTodos.map((todo) => <Task todo={todo} key={todo.id} />)))
+        }
+      </div>
     </div>
   );
 };

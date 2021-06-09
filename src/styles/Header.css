@@ -1,11 +1,11 @@
 .header-container {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 90%;
   height: 80px;
   justify-content: space-between;
   align-items: center;
-  margin: 0 10px;
+  margin: 0 auto 0 10px;
 }
 
 .view-section {
@@ -22,13 +22,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 25%;
+  width: 30%;
   height: 30px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .user-details > img {
   border-radius: 15px;
+  margin-right: 10px;
 }
 
 .user-details > p {
@@ -40,7 +41,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 50%;
+  width: 60%;
   height: 30px;
   align-items: center;
 }
@@ -78,6 +79,7 @@
   font-size: 20px;
   font-weight: 500;
   margin: 0 auto;
+  width: 150px;
 }
 
 .sub-title {
@@ -91,7 +93,7 @@
   flex-direction: column;
   position: absolute;
   top: 95px;
-  right: 290px;
+  right: 440px;
   width: 120px;
   border: 1px solid black;
   margin-left: 0;
@@ -106,8 +108,6 @@
 .filter-btn {
   position: relative;
   text-align: left;
-
-  /* margin-left: 10px; */
 }
 
 .filter-title {
@@ -144,7 +144,7 @@
   width: 30%;
   display: flex;
   flex-direction: row;
-  margin-left: 640px;
+  margin-left: 600px;
   justify-content: center;
   align-items: center;
 }
@@ -152,10 +152,6 @@
 .groupby-dropdown {
   margin-left: 10px;
 }
-
-/* .filter-btn > p {
-  margin: 0px auto;
-} */
 
 .btn-check {
   display: flex;
@@ -176,6 +172,11 @@
   height: 30px;
   background-color: white;
   border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80px;
 }
 
 .filter-btn-main > p {
@@ -192,4 +193,8 @@
 
 button {
   cursor: pointer;
+}
+
+.filter-icon {
+  font-size: 20px;
 }

@@ -47,15 +47,18 @@ const InProgress = ({ setParentTask, inProgressTodos, classN }) => {
         { showForm
         && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} /> }
       </div>
-      {
-        (classN === 'progress-view-container')
-          ? (
-            (inProgressTodos && inProgressTodos.length > 0)
-        && (inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />))
-          )
-          : (showTask && (inProgressTodos && inProgressTodos.length > 0)
-        && (inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />)))
-      }
+      <div className="progress-view-alltasks">
+        {
+          (classN === 'progress-view-container')
+            ? (
+              (inProgressTodos && inProgressTodos.length > 0)
+          && (inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />))
+            )
+            : (showTask && (inProgressTodos && inProgressTodos.length > 0)
+          && (inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />)))
+        }
+      </div>
+      
     </div>
   );
 };

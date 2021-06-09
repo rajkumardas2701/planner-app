@@ -5,11 +5,9 @@
   justify-content: space-between;
 }
 
-.progress-each {
+.progress-view-container-each {
   width: 32%;
   height: auto;
-
-  /* border: 1px solid black; */
 }
 
 .progress-btns {
@@ -19,4 +17,16 @@
 
 .progress-title {
   text-align: left;
+}
+
+.progress-view-noDues {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.progress-title-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

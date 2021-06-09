@@ -96,7 +96,6 @@ const enumerateDaysInWeek = (selectDate, events) => {
 
     fromDate = moment(fromDate).add(1, 'days');
   }
-  console.log('results', results);
   // return results;
   for (let i = 0; i < results.length; i += 1) {
     for (let j = 0; j < events.length; j += 1) {

@@ -1,0 +1,82 @@
+.task-container {
+  border: 1px solid rgb(197, 195, 195);
+  box-shadow: 5px 5px rgb(197, 195, 195);
+  margin-bottom: 15px;
+}
+
+.task-title-status {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.progress-view-not-started,
+.progress-view-in-progress,
+.progress-view-completed {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.task-title-status > .task-title {
+  margin-left: 20px;
+}
+
+.progress-view-not-started {
+  background-color: white;
+}
+
+.progress-view-completed {
+  background-color: green;
+}
+
+.progress-view-in-progress {
+  background: linear-gradient(white 50%, rgb(77, 77, 250) 50%);
+}
+
+.todoTag {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  color: green;
+}
+
+.task-dueDate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 60px;
+  justify-content: space-between;
+  height: 20px;
+  margin: 10px 0 10px 15px;
+  /* margin-left: 30px; */
+}
+
+.cal-task {
+  color: grey;
+}
+
+.task-assigned {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid rgb(197, 195, 195);
+  margin-top: 5px;
+  height: 40px;
+}
+
+.task-assigned > img {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-left: 15px;
+}
+
+.task-assigned > p {
+  margin: 0px;
+  padding-left: 10px;
+}

@@ -13,12 +13,21 @@ const Header = (
   const [showFilters, setShowFilters] = useState(false);
   const [showProgress, setShowProgress] = useState(false);
   const [showDue, setShowDue] = useState(false);
+  const [filterCount, setFilterCount] = useState(0);
   useEffect(() => {
     setSection(section);
   }, [section]);
+  // let filterCount = 0;
+  const countTrueObj = (items) => {
+    console.log('filters in counttrueObj', items);
+    const count = Object.values(items).filter((item) => item === true).length;
+    return count;
+  };
   const handleFilterClick = (e) => {
     setShowFilters(!showFilters);
     e.preventDefault();
+    // filterCount = countTrueObj(filters);
+    // console.log('filter count in filter click func', filterCount);
   };
   const handleBoardChange = (e) => {
     e.preventDefault();
@@ -64,9 +73,12 @@ const Header = (
       setFilters({ ...filters, [textContent]: false });
     }
   };
+  useEffect(() => {
+    setFilterCount(countTrueObj(filters));
+  }, [filters]);
   return (
     <div className="header-container">
-      {/* {console.log('filters from Header', filters)} */}
+      {console.log('filters from Header', filters)}
       <div className="image-task">
         <div className="image">
           <p>MP</p>
@@ -87,7 +99,11 @@ const Header = (
         </div>
         <div className="categories-section">
           <button type="button" onClick={handleFilterClick} className="filter-btn">
-            Filter ()
+            <p>
+              Filter (
+              {filterCount}
+              )
+            </p>
           </button>
           {
               showFilters

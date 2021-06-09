@@ -31,6 +31,8 @@ const DueDateView = ({ setParentTask, currentToDos }) => {
     future = dueDateTodos[0].Future;
     noDueDate = dueDateTodos[0]['No Date'];
   }
+  const classN = 'due-date-view-container';
+  const classM = 'due-date-each';
   return (
     <div className="due-date-view-container">
       {console.log('current todos in Due Date view', dueDateTodos)}
@@ -81,7 +83,14 @@ const DueDateView = ({ setParentTask, currentToDos }) => {
         {console.log('no due list', noDueDate)}
         {
           (noDueDate && noDueDate.length > 0)
-          && (<NoDueDateView setParentTask={setParentTask} noDueDate={noDueDate} />)
+          && (
+          <NoDueDateView
+            setParentTask={setParentTask}
+            noDueDate={noDueDate}
+            classN={classN}
+            classM={classM}
+          />
+          )
         }
       </div>
     </div>

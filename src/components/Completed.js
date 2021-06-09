@@ -53,13 +53,14 @@ const Completed = ({ setParentTask, completedTodos, classN }) => {
 };
 
 Completed.propTypes = {
-  setParentTask: PropTypes.func.isRequired,
+  setParentTask: PropTypes.func,
   completedTodos: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   classN: PropTypes.string.isRequired,
 };
 
 Completed.defaultProps = {
   completedTodos: [],
+  setParentTask: () => {},
 };
 
 export default Completed;

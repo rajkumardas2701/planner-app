@@ -22,7 +22,7 @@ const ScheduleNoDues = ({ allTasks, groupBy, setParentTask }) => {
       </div>
       {
         (groupBy === 'Progress')
-          ? (<NoDueProgressView />)
+          ? (<NoDueProgressView allTasks={allTasks} />)
           : (<NoDueAndDueDateView />)
       }
     </div>

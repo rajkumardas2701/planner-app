@@ -5,6 +5,7 @@
   height: 80px;
   justify-content: space-between;
   align-items: center;
+  margin: 0 10px;
 }
 
 .view-section {
@@ -12,6 +13,7 @@
   flex-direction: row;
   justify-content: space-around;
   width: 10%;
+
   /* border: 1px solid black; */
   margin-left: 40px;
 }
@@ -31,7 +33,7 @@
 
 .user-details > p {
   margin-top: 4px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .categories-section {
@@ -75,13 +77,13 @@
 .main-title {
   font-size: 20px;
   font-weight: 500;
-  margin: 0px auto;
+  margin: 0 auto;
 }
 
 .sub-title {
   font-size: 12px;
   margin-top: -3px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .filter-container {
@@ -92,7 +94,7 @@
   right: 290px;
   width: 120px;
   border: 1px solid black;
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .progress-filters,
@@ -104,6 +106,7 @@
 .filter-btn {
   position: relative;
   text-align: left;
+
   /* margin-left: 10px; */
 }
 
@@ -116,14 +119,15 @@
 }
 
 .filter-title > p {
-  margin: 0px;
+  margin: 0;
 }
 
 .board-button,
 .schedule-button {
   height: 40px;
-  border: 0px;
+  border: 0;
   margin: 2px;
+  background-color: white;
 }
 
 .board-button:hover,
@@ -133,6 +137,7 @@
 
 .board-schedule-click {
   border-bottom: 2px solid green;
+  font-weight: 600;
 }
 
 .header-right-section {
@@ -169,10 +174,12 @@
 
 .filter-btn-main {
   height: 30px;
+  background-color: white;
+  border: none;
 }
 
 .filter-btn-main > p {
-  margin: 0px;
+  margin: 0;
 }
 
 .angle-down-reverse {
@@ -181,4 +188,8 @@
 
 .angle-down-reverse-due {
   transform: rotate(180deg);
+}
+
+button {
+  cursor: pointer;
 }

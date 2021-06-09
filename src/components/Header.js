@@ -8,7 +8,6 @@ const Header = (
     setView, setGroupBy, setFilters, filters,
   },
 ) => {
-  // set section is to highlight the selection board or schedule
   const [section, setSection] = useState('board');
   const [showFilters, setShowFilters] = useState(false);
   const [showProgress, setShowProgress] = useState(false);
@@ -54,8 +53,8 @@ const Header = (
     e.preventDefault();
     setShowProgress(!showProgress);
     const element = document.getElementById('fa-angle-down');
-    if (document.getElementsByClassName('angle-down-reverse').length > 0 ) {
-      element.classList.remove('angle-down-reverse')
+    if (document.getElementsByClassName('angle-down-reverse').length > 0) {
+      element.classList.remove('angle-down-reverse');
     } else {
       element.classList.add('angle-down-reverse');
     }
@@ -64,8 +63,8 @@ const Header = (
     e.preventDefault();
     setShowDue(!showDue);
     const element = document.getElementById('fa-angle-down-due');
-    if (document.getElementsByClassName('angle-down-reverse-due').length > 0 ) {
-      element.classList.remove('angle-down-reverse-due')
+    if (document.getElementsByClassName('angle-down-reverse-due').length > 0) {
+      element.classList.remove('angle-down-reverse-due');
     } else {
       element.classList.add('angle-down-reverse-due');
     }
@@ -123,7 +122,7 @@ const Header = (
               <div className="filter-container">
                 <button type="button" className="filter-title filter-btn" onClick={handleProgressList}>
                   <p>Progress</p>
-                  <div><i class="fas fa-angle-down" id="fa-angle-down" /></div>
+                  <div><i className="fas fa-angle-down" id="fa-angle-down" /></div>
                 </button>
                 {
                   showProgress
@@ -144,7 +143,7 @@ const Header = (
                 }
                 <button type="button" className="filter-title filter-btn" onClick={handleDueList}>
                   <p>Due</p>
-                  <div><i class="fas fa-angle-down" id="fa-angle-down-due" /></div>
+                  <div><i className="fas fa-angle-down" id="fa-angle-down-due" /></div>
                 </button>
                 {
                   showDue

@@ -94,7 +94,7 @@ const AddTask = ({ setParentTask, setShowForm, status }) => {
           value={assign}
           onChange={handleChange}
         />
-        <button type="submit">
+        <button type="submit" className="task-submit-btn">
           Add Task
         </button>
       </form>

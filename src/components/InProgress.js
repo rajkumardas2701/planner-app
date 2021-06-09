@@ -34,11 +34,19 @@ const InProgress = ({ setParentTask, inProgressTodos, classN }) => {
       </div>
       {
         (classN === 'progress-view-container')
-          ? (<button type="button" onClick={handleClick} className="progress-btns">+ Add Task</button>)
+          ? (
+            <button type="button" onClick={handleClick} className="progress-btns">
+              {' '}
+              <p className="add-icon">+</p>
+              <p className="add-icon-title">Add task</p>
+            </button>
+          )
           : ''
       }
-      { showForm
-      && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} /> }
+      <div className="add-task">
+        { showForm
+        && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} /> }
+      </div>
       {
         (classN === 'progress-view-container')
           ? (

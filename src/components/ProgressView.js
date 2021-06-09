@@ -10,7 +10,7 @@ const ProgressView = ({ setParentTask, currentToDos, classN }) => {
   useEffect(() => {
     setProgressTodos(currentToDos);
   }, [currentToDos]);
-  console.log('Current Todos in ProgressView', currentToDos);
+  // console.log('Current Todos in ProgressView', currentToDos);
   let notStartedTodos;
   let inProgressTodos;
   let completedTodos;

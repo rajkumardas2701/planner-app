@@ -51,7 +51,7 @@ const NoDueDateView = ({
                  && (noDueDate.map((todo) => <Task todo={todo} key={todo.id} />)))
           )
       }
-      {console.log('no due task in noduedateview', noDueDate)}
+      {/* {console.log('no due task in noduedateview', noDueDate)} */}
     </div>
   );
 };

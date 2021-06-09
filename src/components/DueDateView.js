@@ -35,7 +35,7 @@ const DueDateView = ({ setParentTask, currentToDos }) => {
   const classM = 'due-date-each';
   return (
     <div className="due-date-view-container">
-      {console.log('current todos in Due Date view', dueDateTodos)}
+      {/* {console.log('current todos in Due Date view', dueDateTodos)} */}
       {/* {console.log('rendering count in Due Date view', i + 1)} */}
       <div>
         {/* {console.log('late list', late)} */}

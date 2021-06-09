@@ -60,7 +60,7 @@ const Header = (
   };
   return (
     <div className="header-container">
-      {console.log('filters from Header', filters)}
+      {/* {console.log('filters from Header', filters)} */}
       <div className="image-task">
         <div className="image">
           <p>Image</p>

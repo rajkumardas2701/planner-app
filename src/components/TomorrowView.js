@@ -12,9 +12,14 @@ const TomorrowView = ({ setParentTask, tomorrow }) => {
   return (
     <div className="due-date-each">
       <h4 className="dueDate-title">Tomorrow</h4>
-      <button type="button" onClick={handleClick} className="due-date-btns">+ Add Task</button>
-      { showForm
-       && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
+      <button type="button" onClick={handleClick} className="due-date-btns">
+        <p className="add-icon">+</p>
+        <p className="add-icon-title">Add task</p>
+      </button>
+      <div className="add-task">
+        { showForm
+        && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
+      </div>
       {
         tomorrow.map((todo) => <Task todo={todo} key={todo.id} />)
       }

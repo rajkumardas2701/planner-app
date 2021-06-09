@@ -58,7 +58,7 @@ const InProgress = ({ setParentTask, inProgressTodos, classN }) => {
           && (inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />)))
         }
       </div>
-      
+
     </div>
   );
 };

@@ -44,7 +44,7 @@ const Completed = ({ setParentTask, completedTodos, classN }) => {
           : ''
       }
       <div className="add-task">
-      { showForm
+        { showForm
        && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} /> }
       </div>
       <div className="progress-view-alltasks">

@@ -7,21 +7,22 @@ const Task = ({ todo }) => {
   const fetchClass = (progress) => {
     if (progress === 'Not started') {
       return 'progress-view-not-started';
-    } else if (progress === 'In progress') {
+    } if (progress === 'In progress') {
       return 'progress-view-in-progress';
     }
     return 'progress-view-completed';
-  }
-  const handleProgressState = (todo) => {
-    
   };
+  // const handleProgressState = (todo) => {
+
+  // };
   return (
     <div className="task-container">
       <div className="task-title-status">
-        <button type="button"
-         className={fetchClass(todo.progress)}
-         onClick={handleProgressState}
-         />
+        <button
+          type="button"
+          className={fetchClass(todo.progress)}
+          // onClick={handleProgressState}
+        />
         <p className="task-title">
           {todo.name}
         </p>
@@ -29,34 +30,33 @@ const Task = ({ todo }) => {
       <div>
         {
           (todo.toDo && todo.toDo.length > 0)
-          ? (<div className="todoTag">{todo.toDo}</div>)
-          : (<p className="todoTag">To do</p>)
+            ? (<div className="todoTag">{todo.toDo}</div>)
+            : (<p className="todoTag">To do</p>)
         }
       </div>
       {
         (todo.dueDate && todo.dueDate.length > 0)
-        ? (      
-          <div className="task-dueDate">
-            <i className="far fa-calendar-alt cal-task"/>
-            <p>{moment(todo.dueDate, 'YYYY-MM-DD').format('MM/DD')}</p>
-          </div> 
-        )
-        : ''
+          ? (
+            <div className="task-dueDate">
+              <i className="far fa-calendar-alt cal-task" />
+              <p>{moment(todo.dueDate, 'YYYY-MM-DD').format('MM/DD')}</p>
+            </div>
+          )
+          : ''
         }
-        {
+      {
           (todo.assign && todo.assign.length > 0)
-          ? (      
+            ? (
               <div className="task-assigned">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7fy7sKAqTLiD5YtPEY84Q9wtV8dDLmoBSeg&usqp=CAU" alt="avator" />
                 <p>{todo.assign}</p>
-              </div> 
-          )
-          : ''
+              </div>
+            )
+            : ''
         }
     </div>
   );
 };
-
 
 Task.propTypes = {
   todo: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,

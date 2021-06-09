@@ -35,11 +35,18 @@ const NoDueDateView = ({
       </div>
       {
         (classN === 'due-date-view-container')
-          ? (<button type="button" onClick={handleClick} className="due-date-btns">+ Add Task</button>)
+          ? (
+            <button type="button" onClick={handleClick} className="due-date-btns">
+              <p className="add-icon">+</p>
+              <p className="add-icon-title">Add task</p>
+            </button>
+          )
           : ''
       }
-      { showForm
-       && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
+      <div className="add-task">
+        { showForm
+        && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
+      </div>
       {
         (classN === 'due-date-view-container')
           ? (

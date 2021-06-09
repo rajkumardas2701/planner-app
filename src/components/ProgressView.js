@@ -5,7 +5,7 @@ import NotStarted from './NotStarted';
 import InProgress from './InProgress';
 import Completed from './Completed';
 
-const ProgressView = ({ setParentTask, currentToDos }) => {
+const ProgressView = ({ setParentTask, currentToDos, classN }) => {
   const [progressTodos, setProgressTodos] = useState(currentToDos);
   useEffect(() => {
     setProgressTodos(currentToDos);
@@ -20,15 +20,27 @@ const ProgressView = ({ setParentTask, currentToDos }) => {
     completedTodos = progressTodos[1].Completed;
   }
   return (
-    <div className="progress-view-container">
-      <div className="progress-each">
-        <NotStarted setParentTask={setParentTask} notStartedTodos={notStartedTodos} />
+    <div className={classN}>
+      <div className={`${classN}-each`}>
+        <NotStarted
+          setParentTask={setParentTask}
+          notStartedTodos={notStartedTodos}
+          classN={classN}
+        />
       </div>
-      <div className="progress-each">
-        <InProgress setParentTask={setParentTask} inProgressTodos={inProgressTodos} />
+      <div className={`${classN}-each`}>
+        <InProgress
+          setParentTask={setParentTask}
+          inProgressTodos={inProgressTodos}
+          classN={classN}
+        />
       </div>
-      <div className="progress-each">
-        <Completed setParentTask={setParentTask} completedTodos={completedTodos} />
+      <div className={`${classN}-each`}>
+        <Completed
+          setParentTask={setParentTask}
+          completedTodos={completedTodos}
+          classN={classN}
+        />
       </div>
     </div>
   );
@@ -37,6 +49,7 @@ const ProgressView = ({ setParentTask, currentToDos }) => {
 ProgressView.propTypes = {
   setParentTask: PropTypes.func.isRequired,
   currentToDos: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  classN: PropTypes.string.isRequired,
 };
 
 ProgressView.defaultProps = {

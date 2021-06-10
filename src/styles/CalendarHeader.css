@@ -23,7 +23,7 @@
 
 .date-selector > button {
   display: flex;
-  flex-direction: start;
+  flex-direction: row;
   align-items: center;
   width: 160px;
   justify-content: start;
@@ -52,7 +52,8 @@
   border-bottom: 2px solid green;
   font-weight: 600;
 }
-/* 
+
+/*
 .week-view-date-indicator {
   display
 } */

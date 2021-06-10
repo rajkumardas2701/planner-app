@@ -56,11 +56,11 @@ const DatePicker = ({
             moment(selectDate).year()
           }
         </button>
-        <button type="button" className="year-nav" onClick={upYear}>
-          -
+        <button type="button" className="year-nav up-arrow-nav" onClick={upYear}>
+          <div className="up-arrow-nav">{'<'}</div>
         </button>
         <button type="button" className="year-nav" onClick={downYear}>
-          +
+          <div className="down-arrow-nav">{'<'}</div>
         </button>
       </div>
       <div className="year-container">

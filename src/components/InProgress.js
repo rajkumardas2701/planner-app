@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import AddTask from './AddTask';
 import Task from './Task';
@@ -9,6 +9,12 @@ const InProgress = ({ setParentTask, inProgressTodos, classN }) => {
   const handleExpansion = (e) => {
     e.preventDefault();
     setShowTask(!showTask);
+    const element = document.getElementById('in-progress-no-dues');
+    if (document.getElementsByClassName('angle-down-reverse-in-progress').length > 0) {
+      element.classList.remove('angle-down-reverse-in-progress');
+    } else {
+      element.classList.add('angle-down-reverse-in-progress');
+    }
   };
   const handleClick = (e) => {
     e.preventDefault();
@@ -26,6 +32,8 @@ const InProgress = ({ setParentTask, inProgressTodos, classN }) => {
               <button
                 type="button"
                 onClick={handleExpansion}
+                className="unschedule-button-inProgress"
+                id="in-progress-no-dues"
               >
                 {'>'}
               </button>
@@ -34,20 +42,32 @@ const InProgress = ({ setParentTask, inProgressTodos, classN }) => {
       </div>
       {
         (classN === 'progress-view-container')
-          ? (<button type="button" onClick={handleClick} className="progress-btns">+ Add Task</button>)
+          ? (
+            <button type="button" onClick={handleClick} className="progress-btns">
+              {' '}
+              <p className="add-icon">+</p>
+              <p className="add-icon-title">Add task</p>
+            </button>
+          )
           : ''
       }
-      { showForm
-      && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} /> }
+      <div className="add-task">
+        { showForm
+        && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} /> }
+      </div>
       {
-        (classN === 'progress-view-container')
-          ? (
-            (inProgressTodos && inProgressTodos.length > 0)
-        && (inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />))
-          )
-          : (showTask && (inProgressTodos && inProgressTodos.length > 0)
-        && (inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />)))
-      }
+          (classN === 'progress-view-container')
+            ? (
+              <div className="progress-view-alltasks">
+                {
+                (inProgressTodos && inProgressTodos.length > 0)
+                && (inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />))
+              }
+              </div>
+            )
+            : (showTask && (inProgressTodos && inProgressTodos.length > 0)
+          && (inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />)))
+        }
     </div>
   );
 };

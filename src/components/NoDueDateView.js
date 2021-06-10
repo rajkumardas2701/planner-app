@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import AddTask from './AddTask';
 import Task from './Task';
@@ -11,6 +11,12 @@ const NoDueDateView = ({
   const handleExpansion = (e) => {
     e.preventDefault();
     setShowTask(!showTask);
+    const element = document.getElementById('no-due-date-id');
+    if (document.getElementsByClassName('angle-down-reverse-no-due-date').length > 0) {
+      element.classList.remove('angle-down-reverse-no-due-date');
+    } else {
+      element.classList.add('angle-down-reverse-no-due-date');
+    }
   };
   const handleClick = (e) => {
     e.preventDefault();
@@ -27,6 +33,8 @@ const NoDueDateView = ({
               <button
                 type="button"
                 onClick={handleExpansion}
+                className="unschedule-button-no-due-date"
+                id="no-due-date-id"
               >
                 {'>'}
               </button>
@@ -35,11 +43,18 @@ const NoDueDateView = ({
       </div>
       {
         (classN === 'due-date-view-container')
-          ? (<button type="button" onClick={handleClick} className="due-date-btns">+ Add Task</button>)
+          ? (
+            <button type="button" onClick={handleClick} className="due-date-btns">
+              <p className="add-icon">+</p>
+              <p className="add-icon-title">Add task</p>
+            </button>
+          )
           : ''
       }
-      { showForm
-       && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
+      <div className="add-task">
+        { showForm
+        && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
+      </div>
       {
         (classN === 'due-date-view-container')
           ? (
@@ -51,7 +66,6 @@ const NoDueDateView = ({
                  && (noDueDate.map((todo) => <Task todo={todo} key={todo.id} />)))
           )
       }
-      {/* {console.log('no due task in noduedateview', noDueDate)} */}
     </div>
   );
 };

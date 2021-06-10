@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import AddTask from './AddTask';
 import Task from './Task';
@@ -13,9 +13,14 @@ const LateView = ({ setParentTask, late }) => {
   return (
     <div className="due-date-each">
       <h4 className="dueDate-title">Late</h4>
-      <button type="button" onClick={handleClick} className="due-date-btns">+ Add Task</button>
-      { showForm
-       && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
+      <button type="button" onClick={handleClick} className="due-date-btns">
+        <p className="add-icon">+</p>
+        <p className="add-icon-title">Add task</p>
+      </button>
+      <div className="add-task">
+        { showForm
+        && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} /> }
+      </div>
       {
         (late && late.length > 0)
         && (late.map((todo) => <Task todo={todo} key={todo.id} />))

@@ -2,12 +2,10 @@
   width: 155px;
   height: 210px;
   position: absolute;
-  top: 250px;
+  top: 150px;
   left: 65px;
   background-color: white;
-
-  /* box-shadow: gray; */
-  border: 1px solid black;
+  border: 1px solid rgb(197, 195, 195);
 }
 
 .year-btn,
@@ -17,6 +15,7 @@
   cursor: pointer;
   height: 50px;
   padding: 0 !important;
+  border: 0;
 }
 
 .year-container,
@@ -33,10 +32,16 @@
 
 .year-selector {
   width: 112.5px;
+  border: 0;
+  background-color: #e0e0e0;
 }
 
 .year-nav,
-.year-selector,
+.year-btn {
+  border: 0;
+}
+
+.year-nav,
 .year-btn,
 .month-btn,
 .today-btn {
@@ -56,4 +61,14 @@
   position: absolute;
   top: 182px;
   right: 10px;
+}
+
+.down-arrow-nav {
+  transform: rotate(-90deg);
+  font-size: 15px;
+}
+
+.up-arrow-nav {
+  transform: rotate(45deg);
+  font-size: 15px;
 }

@@ -6,17 +6,24 @@
 }
 
 .progress-view-container-each {
-  width: 32%;
-  height: auto;
+  width: 30%;
+  height: 650px;
 }
 
 .progress-btns {
   width: 100%;
   height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  border: 1px solid rgb(197, 195, 195);
+  box-shadow: 5px 5px rgb(197, 195, 195);
 }
 
 .progress-title {
   text-align: left;
+  font-weight: 500;
 }
 
 .progress-view-noDues {
@@ -29,4 +36,26 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.add-icon {
+  font-size: 30px;
+  color: green;
+  margin-left: 10px;
+}
+
+.add-icon-title {
+  margin-left: 10px;
+  color: green;
+  font-size: 15px;
+}
+
+.add-task {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.progress-view-alltasks {
+  height: 650px;
+  overflow-y: auto;
 }

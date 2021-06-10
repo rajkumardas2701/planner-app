@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 // import '../styles/App.css';
+import { initializeIcons } from '@fluentui/font-icons-mdl2';
 import ToDoList from '../containers/TodoList';
 import Header from './Header';
 import NavBar from '../layouts/NavBar';
 
 const App = () => {
+  initializeIcons();
   const [view, setView] = useState('board');
   const [groupBy, setGroupBy] = useState('Progress');
   const [filters, setFilters] = useState({

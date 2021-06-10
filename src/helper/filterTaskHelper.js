@@ -102,7 +102,8 @@ const filterTaskHelper = (tasks, filters) => {
   if (progressFilters.every((ele) => ele === false)) {
     const pt = [];
     for (let i = 0; i < DUEHELPERARR.length; i += 1) {
-      if (filters[DUETASKARR[i]] === true && perDue[DUEHELPERARR[i]].length > 0) {
+      if (filters[DUETASKARR[i]] === true
+         && perDue[DUEHELPERARR[i]] && perDue[DUEHELPERARR[i]].length > 0) {
         dueTasks[DUETASKARR[i]] = perDue[DUEHELPERARR[i]];
         console.log('Inside Per due loop', perDue[DUEHELPERARR[i]]);
         if (dueTasks[DUETASKARR[i]]) {

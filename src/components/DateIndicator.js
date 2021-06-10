@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   getDayOfMonth,
-  // getMonthDayYear,
   getMonth,
   getYear,
 } from '../helper/moment-helper';
 import { getDatesAndEvents } from '../helper/calendarHelper';
+import '../styles/month-row.css';
 
 const DateIndicator = ({ selectDate, setSelectDate, events }) => {
   const datesAndEvents = getDatesAndEvents(
@@ -17,7 +17,7 @@ const DateIndicator = ({ selectDate, setSelectDate, events }) => {
   console.log(setSelectDate);
   console.log('dayEvents in DateIndicator', datesAndEvents);
   const totalSlots = datesAndEvents.map((i) => (
-    <td
+    <div
       className="date-icon"
       key={i.date.toISOString()}
       data-active-month={i.currentMonth}
@@ -33,7 +33,7 @@ const DateIndicator = ({ selectDate, setSelectDate, events }) => {
           }
         </div>
       </div>
-    </td>
+    </div>
   ));
   const rows = [];
   let cells = [];
@@ -50,13 +50,13 @@ const DateIndicator = ({ selectDate, setSelectDate, events }) => {
       cells.push(data);
     }
   });
-  const monthDates = rows.map((d) => <tr key={d}>{d}</tr>);
+  const monthDates = rows.map((d) => <div key={d} className="month-row">{d}</div>);
   return (
-    <>
+    <div>
       {
         monthDates
       }
-    </>
+    </div>
   );
 };
 

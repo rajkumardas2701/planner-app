@@ -8,3 +8,47 @@
 .date-selector {
   position: relative;
 }
+
+.calendar-header {
+  background-color: rgb(224, 224, 224);
+  height: 30px;
+}
+
+.date-selector > button > p {
+  transform: rotate(90deg);
+  margin: 0 0 0 5px;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.date-selector > button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 140px;
+  justify-content: start;
+  background-color: rgb(224, 224, 224);
+  border: none;
+}
+
+.left-container-month-view > button {
+  font-size: 15px;
+  background-color: rgb(224, 224, 224);
+  border: none;
+}
+
+.calendar-current-month {
+  font-weight: 600;
+}
+
+.month-click,
+.week-click {
+  height: 30px;
+  background-color: rgb(224, 224, 224);
+  border: 0;
+}
+
+.month-week-click {
+  border-bottom: 2px solid green;
+  font-weight: 600;
+}

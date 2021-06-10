@@ -6,10 +6,12 @@
 
 .calendar-section {
   width: 80%;
-  border: 1px solid black;
+  box-shadow: 3px 3px 3px 3px rgb(197, 195, 195);
+  height: 790px;
 }
 
 .no-due-section {
   width: 15%;
   border: 1px solid black;
+  height: 790px;
 }

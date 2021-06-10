@@ -3,7 +3,6 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import arrOfEvents from '../helper/arrOfEvents';
 import '../styles/CalendarApp.css';
-// import { getDatesInMonthDisplay } from '../helper/calendarHelper';
 import CalendarHeader from './CalendarHeader';
 import WeekdayIndicator from './WeekdayIndicator';
 import DateIndicator from './DateIndicator';
@@ -12,7 +11,6 @@ import WeekIndicator from './WeekIndicator';
 const CalendarApp = ({ allTasks }) => {
   const [selectDate, setSelectDate] = useState(moment().toDate());
   const [calendarView, setCalendarView] = useState('month');
-  // console.log(setSelectDate);
   const events = arrOfEvents(allTasks);
   return (
     <div>

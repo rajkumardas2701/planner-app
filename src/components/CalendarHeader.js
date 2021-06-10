@@ -47,10 +47,18 @@ const CalendarHeader = ({
   const handleWeekView = (e) => {
     e.preventDefault();
     setCalendarView('week');
+    const element = document.getElementById('week-click');
+    element.classList.add('month-week-click');
+    const btnelement = document.getElementById('month-click');
+    btnelement.classList.remove('month-week-click');
   };
   const handleMonthView = (e) => {
     e.preventDefault();
     setCalendarView('month');
+    const element = document.getElementById('month-click');
+    element.classList.add('month-week-click');
+    const btnelement = document.getElementById('week-click');
+    btnelement.classList.remove('month-week-click');
   };
   return (
     <div className="calendar-header">
@@ -68,12 +76,13 @@ const CalendarHeader = ({
                 <button
                   type="button"
                   onClick={handleDatePicker}
-                >
-                  {moment(selectDate).format('MMMM')}
-                  {' '}
-                  {moment(selectDate).year()}
-                  {' '}
-                  {'>'}
+                > <div className="calendar-current-month">
+                    {moment(selectDate).format('MMMM')}
+                    {' '}
+                    {moment(selectDate).year()}
+                    {' '}
+                  </div>
+                  <p>{'>'}</p>
                 </button>
               </div>
             </div>
@@ -138,10 +147,10 @@ const CalendarHeader = ({
           )
       }
       <div className="right-container">
-        <button type="button" onClick={handleWeekView}>
+        <button type="button" onClick={handleWeekView} className="week-click month-week-click" id="week-click">
           Week
         </button>
-        <button type="button" onClick={handleMonthView}>
+        <button type="button" onClick={handleMonthView} className="month-click" id="month-click">
           Month
         </button>
       </div>

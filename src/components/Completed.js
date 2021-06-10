@@ -69,7 +69,8 @@ const Completed = ({ setParentTask, completedTodos, classN }) => {
               <div className="unscheduled-progress-view-alltasks">
                 {
                 (showTask && (completedTodos && completedTodos.length > 0)
-                && (completedTodos.map((todo) => <Task todo={todo} key={todo.id} status={status} />)))
+                && (
+                  completedTodos.map((todo) => <Task todo={todo} key={todo.id} status={status} />)))
               }
               </div>
             )

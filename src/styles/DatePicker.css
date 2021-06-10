@@ -33,12 +33,12 @@
 .year-selector {
   width: 112.5px;
   border: 0;
-  background-color: #E0E0E0;
+  background-color: #e0e0e0;
 }
 
 .year-nav,
 .year-btn {
-  border: 0px;
+  border: 0;
 }
 
 .year-nav,
@@ -64,8 +64,8 @@
 }
 
 .down-arrow-nav {
- transform: rotate(-90deg);
- font-size: 15px;
+  transform: rotate(-90deg);
+  font-size: 15px;
 }
 
 .up-arrow-nav {

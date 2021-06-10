@@ -12,16 +12,12 @@ const Task = ({ todo }) => {
     }
     return 'progress-view-completed';
   };
-  // const handleProgressState = (todo) => {
-
-  // };
   return (
     <div className="task-container">
       <div className="task-title-status">
         <button
           type="button"
           className={fetchClass(todo.progress)}
-          // onClick={handleProgressState}
         />
         {
           (todo.progress === 'Completed')
@@ -61,8 +57,13 @@ const Task = ({ todo }) => {
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7fy7sKAqTLiD5YtPEY84Q9wtV8dDLmoBSeg&usqp=CAU" alt="avator" />
                 {
                   (todo.progress === 'Completed')
-                  ? (<p>Completed by {todo.assign}</p>)
-                  : (<p>{todo.assign}</p>)
+                    ? (
+                      <p>
+                        Completed by
+                        {todo.assign}
+                      </p>
+                    )
+                    : (<p>{todo.assign}</p>)
                 }
               </div>
             )

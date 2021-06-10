@@ -149,10 +149,10 @@ const CalendarHeader = ({
           )
       }
       <div className="right-container">
-        <button type="button" onClick={handleWeekView} className="week-click month-week-click" id="week-click">
+        <button type="button" onClick={handleWeekView} className="week-click" id="week-click">
           Week
         </button>
-        <button type="button" onClick={handleMonthView} className="month-click" id="month-click">
+        <button type="button" onClick={handleMonthView} className="month-click month-week-click" id="month-click">
           Month
         </button>
       </div>

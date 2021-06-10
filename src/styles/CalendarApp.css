@@ -24,5 +24,8 @@
 
 .date-label {
   width: 99%;
-  margin: 0 auto;
+  margin-left: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 600;
 }

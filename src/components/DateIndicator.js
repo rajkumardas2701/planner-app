@@ -14,6 +14,7 @@ const DateIndicator = ({ selectDate, events }) => {
     getYear(selectDate),
     events,
   );
+  // document.querySelector('div[data-active-month=false]').style
   // console.log(setSelectDate);
   // console.log('dayEvents in DateIndicator', datesAndEvents);
   const totalSlots = datesAndEvents.map((i) => (
@@ -29,7 +30,7 @@ const DateIndicator = ({ selectDate, events }) => {
         </p>
         <div className="date-task">
           {
-            i.dayEvents.map((event) => <p key={event.id}>{event.name}</p>)
+            i.dayEvents.map((event) => <p key={event.id} className="each-task">{event.name}</p>)
           }
         </div>
       </div>

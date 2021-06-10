@@ -10,7 +10,7 @@ const dateDifference = (value) => {
   const diff = ((new Date(new Date().toISOString().slice(0, 10))).getTime()
   - (new Date(value)).getTime())
   / (1000 * 3600 * 24);
-  console.log('Date diff', diff);
+  // console.log('Date diff', diff);
   return diff;
 };
 

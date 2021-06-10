@@ -14,11 +14,11 @@ const CalendarApp = ({ allTasks }) => {
   const events = arrOfEvents(allTasks);
   return (
     <div>
-      {console.log('All calendarEvents in Calendar App', allTasks)}
+      {/* {console.log('All calendarEvents in Calendar App', allTasks)} */}
       {/* {console.log('SelectDate in CalendarApp', selectDate)} */}
       {/* {console.log('Days in Month', getDaysInMonth(6, 2021))}
       {console.log('firstday in Month', getFirstWeekdayOfMonth(6, 2021))} */}
-      {console.log('arr of events', events)}
+      {/* {console.log('arr of events', events)} */}
       <CalendarHeader
         selectDate={selectDate}
         setSelectDate={setSelectDate}

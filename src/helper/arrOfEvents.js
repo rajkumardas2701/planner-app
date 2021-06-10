@@ -1,7 +1,7 @@
 const arrOfEvents = (events) => {
   const eventlist = [];
   const existing = [];
-  console.log('Events inside helper', events);
+  // console.log('Events inside helper', events);
   const eventcategories = [
     ['Late',
       'Today',
@@ -17,14 +17,14 @@ const arrOfEvents = (events) => {
       'Completed',
     ],
   ];
-  console.log(eventcategories);
+  // console.log(eventcategories);
   for (let i = 0; i < events.length; i += 1) {
     // console.log('events length', eventcategories[i].length);
     for (let j = 0; j < eventcategories[i].length; j += 1) {
       if (events[i][eventcategories[i][j]] && events[i][eventcategories[i][j]].length > 0) {
         // console.log('Length of each events:', events[i][eventcategories[i][j]]);
         for (let k = 0; k < events[i][eventcategories[i][j]].length; k += 1) {
-          console.log(events[i][eventcategories[i][j]][k]);
+          // console.log(events[i][eventcategories[i][j]][k]);
           const obj = events[i][eventcategories[i][j]][k];
           // const instance = {
           //   title: obj.name,
@@ -40,7 +40,7 @@ const arrOfEvents = (events) => {
       }
     }
   }
-  console.log('Eventlist', eventlist);
+  // console.log('Eventlist', eventlist);
   return eventlist;
 };
 

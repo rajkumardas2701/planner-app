@@ -52,7 +52,7 @@ const AddTask = ({ setParentTask, setShowForm, status }) => {
   // };
   return (
     <div>
-      {console.log('addTask form details', taskform)}
+      {/* {console.log('addTask form details', taskform)} */}
       {/* {console.log('set task from AddTask view', setTask)} */}
       <form onSubmit={taskSubmit} className="add-task-form">
         <div

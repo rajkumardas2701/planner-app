@@ -8,14 +8,14 @@ import {
 import { getDatesAndEvents } from '../helper/calendarHelper';
 import '../styles/month-row.css';
 
-const DateIndicator = ({ selectDate, setSelectDate, events }) => {
+const DateIndicator = ({ selectDate, events }) => {
   const datesAndEvents = getDatesAndEvents(
     getMonth(selectDate) + 1,
     getYear(selectDate),
     events,
   );
-  console.log(setSelectDate);
-  console.log('dayEvents in DateIndicator', datesAndEvents);
+  // console.log(setSelectDate);
+  // console.log('dayEvents in DateIndicator', datesAndEvents);
   const totalSlots = datesAndEvents.map((i) => (
     <div
       className="date-icon"
@@ -62,7 +62,7 @@ const DateIndicator = ({ selectDate, setSelectDate, events }) => {
 
 DateIndicator.propTypes = {
   selectDate: PropTypes.instanceOf(Date).isRequired,
-  setSelectDate: PropTypes.func.isRequired,
+  // setSelectDate: PropTypes.func.isRequired,
   events: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };
 

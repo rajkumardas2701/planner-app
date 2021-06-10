@@ -18,7 +18,7 @@ const Header = (
   }, [section]);
   // let filterCount = 0;
   const countTrueObj = (items) => {
-    console.log('filters in counttrueObj', items);
+    // console.log('filters in counttrueObj', items);
     const count = Object.values(items).filter((item) => item === true).length;
     return count;
   };
@@ -87,7 +87,7 @@ const Header = (
   }, [filters]);
   return (
     <div className="header-container">
-      {console.log('filters from Header', filters)}
+      {/* {console.log('filters from Header', filters)} */}
       <div className="image-task">
         <div className="image">
           <p>MP</p>

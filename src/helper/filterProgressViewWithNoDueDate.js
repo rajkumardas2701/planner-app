@@ -1,5 +1,5 @@
 const filterProgressViewWithNoDueDate = (tasks) => {
-  console.group('inside helper of progress view and show tasks', tasks);
+  // console.group('inside helper of progress view and show tasks', tasks);
   const completed = tasks[1].Completed;
   const InProgress = tasks[1]['In progress'];
   const NotStarted = tasks[1]['Not started'];

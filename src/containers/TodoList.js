@@ -12,7 +12,7 @@ const ToDoList = ({ view, groupBy, filters }) => {
   useEffect(() => {
     if ('id' in parentTask) {
       todos.push(parentTask);
-      console.log('inside setParentTask of ToDoList');
+      // console.log('inside setParentTask of ToDoList');
       const noFilterTasks = withNoFilter(todos);
       setAllTasks(noFilterTasks);
       setParentTask({});

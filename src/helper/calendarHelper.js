@@ -75,7 +75,7 @@ const getDatesAndEvents = (month, year, events) => {
   const results = getDatesInMonthDisplay(month, year);
   for (let i = 0; i < results.length; i += 1) {
     for (let j = 0; j < events.length; j += 1) {
-      console.log('Date format in helper', moment(events[j].dueDate, 'YYYY-MM-DD').toDate());
+      // console.log('Date format in helper', moment(events[j].dueDate, 'YYYY-MM-DD').toDate());
       if (`${results[i].date}` === `${moment(events[j].dueDate, 'YYYY-MM-DD').toDate()}`) {
         results[i].dayEvents.push(events[j]);
       }

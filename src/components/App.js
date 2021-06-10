@@ -26,7 +26,7 @@ const App = () => {
   }, [view]);
   return (
     <div className="App">
-      {console.log('view filters from App', filters)}
+      {/* {console.log('view filters from App', filters)} */}
       <NavBar />
       <Header
         setView={setView}

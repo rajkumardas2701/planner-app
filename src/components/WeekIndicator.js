@@ -5,9 +5,9 @@ import { enumerateDaysInWeek } from '../helper/calendarHelper';
 // import moment from 'moment';
 import '../styles/WeekIndicator.css';
 
-const WeekIndicator = ({ selectDate, setSelectDate, events }) => {
+const WeekIndicator = ({ selectDate, events }) => {
   const dates = enumerateDaysInWeek(selectDate, events);
-  console.log(setSelectDate);
+  // console.log(setSelectDate);
   // console.log(selectDate);
   // console.log('dates in weekIndicator', dates);
   return (
@@ -40,7 +40,7 @@ const WeekIndicator = ({ selectDate, setSelectDate, events }) => {
 
 WeekIndicator.propTypes = {
   selectDate: PropTypes.instanceOf(Date).isRequired,
-  setSelectDate: PropTypes.func.isRequired,
+  // setSelectDate: PropTypes.func.isRequired,
   events: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };
 

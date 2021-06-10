@@ -80,7 +80,7 @@ const DueDateView = ({ setParentTask, currentToDos }) => {
         }
       </div>
       <div>
-        {console.log('no due list', noDueDate)}
+        {/* {console.log('no due list', noDueDate)} */}
         {
           (noDueDate && noDueDate.length > 0)
           && (

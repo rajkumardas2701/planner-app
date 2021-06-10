@@ -106,6 +106,7 @@ const CalendarHeader = ({
                         <button
                           type="button"
                           onClick={handleDatePicker}
+                          className="week-view-date-indicator"
                         >
                           {moment(selectDate).startOf('week').format('MMM')}
                           {' '}
@@ -125,6 +126,7 @@ const CalendarHeader = ({
                         <button
                           type="button"
                           onClick={handleDatePicker}
+                          className="week-view-date-indicator"
                         >
                           {moment(selectDate).startOf('week').format('MMM')}
                           {' '}

@@ -15,9 +15,16 @@
   height: 790px;
 }
 
-.each-task {
+.each-task,
+.task-in-week {
   margin: 2px auto;
   border: 1px solid rgb(197, 195, 195);
   background-color: rgb(197, 195, 195);
   padding: 0px 5px;
+}
+
+.week-date-display {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-weight: 600;
 }

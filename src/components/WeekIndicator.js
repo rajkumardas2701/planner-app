@@ -18,7 +18,7 @@ const WeekIndicator = ({ selectDate, events }) => {
             key={d}
             className="week-date"
           >
-            <div>
+            <div className="week-date-display">
               {
                 d.date.getDate()
                 // console.log(d.date.getDate())
@@ -27,7 +27,7 @@ const WeekIndicator = ({ selectDate, events }) => {
             </div>
             <div>
               {
-                d.dayEvents.map((event) => <p key={event.id}>{event.name}</p>)
+                d.dayEvents.map((event) => <p key={event.id} className="task-in-week">{event.name}</p>)
               }
             </div>
           </div>

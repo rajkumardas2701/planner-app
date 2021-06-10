@@ -23,9 +23,9 @@
 
 .date-selector > button {
   display: flex;
-  flex-direction: row;
+  flex-direction: start;
   align-items: center;
-  width: 140px;
+  width: 160px;
   justify-content: start;
   background-color: rgb(224, 224, 224);
   border: none;
@@ -52,3 +52,7 @@
   border-bottom: 2px solid green;
   font-weight: 600;
 }
+/* 
+.week-view-date-indicator {
+  display
+} */

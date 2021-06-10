@@ -1,7 +1,7 @@
 .header-container {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 98%;
   height: 80px;
   justify-content: space-between;
   align-items: center;

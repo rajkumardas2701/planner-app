@@ -25,8 +25,6 @@ const Header = (
   const handleFilterClick = (e) => {
     setShowFilters(!showFilters);
     e.preventDefault();
-    // filterCount = countTrueObj(filters);
-    // console.log('filter count in filter click func', filterCount);
   };
   const handleBoardChange = (e) => {
     e.preventDefault();

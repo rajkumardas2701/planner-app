@@ -9,6 +9,12 @@ const NotStarted = ({ setParentTask, notStartedTodos, classN }) => {
   const handleExpansion = (e) => {
     e.preventDefault();
     setShowTask(!showTask);
+    const element = document.getElementById('not-started-no-dues');
+    if (document.getElementsByClassName('angle-down-reverse-not-started').length > 0) {
+      element.classList.remove('angle-down-reverse-not-started');
+    } else {
+      element.classList.add('angle-down-reverse-not-started');
+    }
   };
   const handleClick = (e) => {
     e.preventDefault();
@@ -26,6 +32,8 @@ const NotStarted = ({ setParentTask, notStartedTodos, classN }) => {
               <button
                 type="button"
                 onClick={handleExpansion}
+                className="unschedule-button-notStarted"
+                id="not-started-no-dues"
               >
                 {'>'}
               </button>
@@ -48,17 +56,19 @@ const NotStarted = ({ setParentTask, notStartedTodos, classN }) => {
           && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} />
       }
       </div>
-      <div className="progress-view-alltasks">
-        {
+      {
           (classN === 'progress-view-container')
             ? (
+              <div className="progress-view-alltasks">
+                {
               (notStartedTodos && notStartedTodos.length > 0)
-            && (notStartedTodos.map((todo) => <Task todo={todo} key={todo.id} />))
+              && (notStartedTodos.map((todo) => <Task todo={todo} key={todo.id} />))
+            }
+              </div>
             )
             : (showTask && (notStartedTodos && notStartedTodos.length > 0)
           && (notStartedTodos.map((todo) => <Task todo={todo} key={todo.id} />)))
         }
-      </div>
     </div>
   );
 };

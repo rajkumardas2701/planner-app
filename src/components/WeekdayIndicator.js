@@ -5,18 +5,18 @@ import '../styles/WeekdayIndicator.css';
 const WeekdayIndicator = () => {
   const weekdays = moment.weekdays();
   return (
-    <tr className="header-row">
+    <div className="header-row">
       {
         weekdays.map((day) => (
-          <th
+          <div
             className="week-day"
             key={day}
           >
             {day}
-          </th>
+          </div>
         ))
       }
-    </tr>
+    </div>
   );
 };
 

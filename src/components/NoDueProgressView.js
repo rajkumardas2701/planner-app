@@ -6,7 +6,6 @@ import filterProgressViewWithNoDueDate from '../helper/filterProgressViewWithNoD
 const NoDueProgressView = ({ allTasks }) => {
   const classN = 'progress-view-noDues';
   const currentToDos = filterProgressViewWithNoDueDate(allTasks);
-  // console.log('current Todos in progress view');
   return (
     <div>
       <ProgressView classN={classN} currentToDos={currentToDos} />

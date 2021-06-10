@@ -23,9 +23,19 @@ const Task = ({ todo }) => {
           className={fetchClass(todo.progress)}
           // onClick={handleProgressState}
         />
-        <p className="task-title">
-          {todo.name}
-        </p>
+        {
+          (todo.progress === 'Completed')
+            ? (
+              <p className="task-title task-strike">
+                {todo.name}
+              </p>
+            )
+            : (
+              <p className="task-title">
+                {todo.name}
+              </p>
+            )
+        }
       </div>
       <div>
         {
@@ -49,7 +59,11 @@ const Task = ({ todo }) => {
             ? (
               <div className="task-assigned">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7fy7sKAqTLiD5YtPEY84Q9wtV8dDLmoBSeg&usqp=CAU" alt="avator" />
-                <p>{todo.assign}</p>
+                {
+                  (todo.progress === 'Completed')
+                  ? (<p>Completed by {todo.assign}</p>)
+                  : (<p>{todo.assign}</p>)
+                }
               </div>
             )
             : ''

@@ -25,8 +25,8 @@ const CalendarApp = ({ allTasks }) => {
         setCalendarView={setCalendarView}
         calendarView={calendarView}
       />
-      <table className="calendar-table">
-        <tbody className="calendar-body">
+      <div className="calendar-table">
+        <div className="calendar-body">
           <WeekdayIndicator />
           {
             calendarView === 'month' ? (
@@ -44,8 +44,8 @@ const CalendarApp = ({ allTasks }) => {
             )
           }
 
-        </tbody>
-      </table>
+        </div>
+      </div>
     </div>
   );
 };

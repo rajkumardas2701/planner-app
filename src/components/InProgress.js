@@ -9,6 +9,12 @@ const InProgress = ({ setParentTask, inProgressTodos, classN }) => {
   const handleExpansion = (e) => {
     e.preventDefault();
     setShowTask(!showTask);
+    const element = document.getElementById('in-progress-no-dues');
+    if (document.getElementsByClassName('angle-down-reverse-in-progress').length > 0) {
+      element.classList.remove('angle-down-reverse-in-progress');
+    } else {
+      element.classList.add('angle-down-reverse-in-progress');
+    }
   };
   const handleClick = (e) => {
     e.preventDefault();
@@ -26,6 +32,8 @@ const InProgress = ({ setParentTask, inProgressTodos, classN }) => {
               <button
                 type="button"
                 onClick={handleExpansion}
+                className="unschedule-button-inProgress"
+                id="in-progress-no-dues"
               >
                 {'>'}
               </button>
@@ -47,18 +55,19 @@ const InProgress = ({ setParentTask, inProgressTodos, classN }) => {
         { showForm
         && <AddTask setParentTask={setParentTask} setShowForm={setShowForm} status={status} /> }
       </div>
-      <div className="progress-view-alltasks">
-        {
+      {
           (classN === 'progress-view-container')
             ? (
-              (inProgressTodos && inProgressTodos.length > 0)
-          && (inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />))
+              <div className="progress-view-alltasks">
+                {
+                (inProgressTodos && inProgressTodos.length > 0)
+                && (inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />))
+              }
+              </div>
             )
             : (showTask && (inProgressTodos && inProgressTodos.length > 0)
           && (inProgressTodos.map((todo) => <Task todo={todo} key={todo.id} />)))
         }
-      </div>
-
     </div>
   );
 };

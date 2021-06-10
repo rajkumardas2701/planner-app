@@ -76,7 +76,9 @@ const CalendarHeader = ({
                 <button
                   type="button"
                   onClick={handleDatePicker}
-                > <div className="calendar-current-month">
+                >
+                  {' '}
+                  <div className="calendar-current-month">
                     {moment(selectDate).format('MMMM')}
                     {' '}
                     {moment(selectDate).year()}

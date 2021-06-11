@@ -12,7 +12,7 @@ This app helps you plan your task and assign it to yourself or your team members
 You can filter the task to check if you are late for any, ones that's schedule for today, tomorrow, somewhere in this week, next week, in future or have task with no due date.
 I have a schedule (calendar) view where you see task on the dates they were scheduled for. Schedule view also have a column to list task which doesn't have any due date.
 
-In the both the views (Board and Schedule), you can group task by progress or due date.
+In both the views (Board and Schedule), you can group task by progress or due date.
 
 ## Built With
 

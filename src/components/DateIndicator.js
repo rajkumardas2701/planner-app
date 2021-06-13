@@ -19,7 +19,7 @@ const DateIndicator = ({ selectDate, events }) => {
   // console.log('dayEvents in DateIndicator', datesAndEvents);
   const totalSlots = datesAndEvents.map((i) => (
     <div
-      className="date-icon"
+      className={`date-icon ${i.class}`}
       key={i.date.toISOString()}
       data-active-month={i.currentMonth}
       data-date={i.date.toString()}

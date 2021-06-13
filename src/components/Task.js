@@ -65,6 +65,7 @@ const Task = ({ todo }) => {
                     ? (
                       <p>
                         Completed by
+                        {' '}
                         {todo.assign}
                       </p>
                     )

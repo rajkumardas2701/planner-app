@@ -7,7 +7,7 @@ import '../styles/ScheduleView.css';
 const ScheduleView = ({ allTasks, groupBy, setParentTask }) => (
   <div className="schedule-view">
     <div className="calendar-section">
-      <CalendarApp allTasks={allTasks} />
+      <CalendarApp allTasks={allTasks} setParentTask={setParentTask} />
     </div>
     <div className="no-due-section">
       <ScheduleNoDues

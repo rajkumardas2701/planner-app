@@ -29,3 +29,7 @@
   margin-bottom: 0;
   font-weight: 600;
 }
+
+.not-in-month {
+  color: darkgray;
+}

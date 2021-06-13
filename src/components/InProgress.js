@@ -73,13 +73,14 @@ const InProgress = ({ setParentTask, inProgressTodos, classN }) => {
 };
 
 InProgress.propTypes = {
-  setParentTask: PropTypes.func.isRequired,
+  setParentTask: PropTypes.func,
   inProgressTodos: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   classN: PropTypes.string.isRequired,
 };
 
 InProgress.defaultProps = {
   inProgressTodos: [],
+  setParentTask: () => {},
 };
 
 export default InProgress;

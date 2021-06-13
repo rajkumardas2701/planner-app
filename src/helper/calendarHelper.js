@@ -46,6 +46,7 @@ const getDatesInMonthDisplay = (month, year) => {
       ).toDate(),
       currentMonth: false,
       dayEvents: [],
+      class: 'not-in-month',
     });
   }
   for (let i = 1; i <= daysInMonth; i += 1) {
@@ -53,6 +54,7 @@ const getDatesInMonthDisplay = (month, year) => {
       date: moment(`${month}-${i}-${year}`, 'MM-DD-YYYY').toDate(),
       currentMonth: true,
       dayEvents: [],
+      class: 'in-month',
     });
   }
   if (result.length < 42) {
@@ -66,6 +68,7 @@ const getDatesInMonthDisplay = (month, year) => {
         ).toDate(),
         currentMonth: false,
         dayEvents: [],
+        class: 'not-in-month',
       });
     }
   } return result;

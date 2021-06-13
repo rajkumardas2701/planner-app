@@ -93,7 +93,7 @@
   position: absolute;
   top: 95px;
   right: 270px;
-  width: 120px;
+  width: 140px;
   border: 1px solid rgb(197, 195, 195);
   margin-left: 0;
 }
@@ -175,11 +175,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 80px;
+  width: 90px;
 }
 
 .filter-btn-main > p {
   margin: 0;
+  font-size: 15px;
 }
 
 .angle-down-reverse {

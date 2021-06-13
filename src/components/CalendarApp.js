@@ -8,7 +8,7 @@ import WeekdayIndicator from './WeekdayIndicator';
 import DateIndicator from './DateIndicator';
 import WeekIndicator from './WeekIndicator';
 
-const CalendarApp = ({ allTasks }) => {
+const CalendarApp = ({ allTasks, setParentTask }) => {
   const [selectDate, setSelectDate] = useState(moment().toDate());
   const [calendarView, setCalendarView] = useState('month');
   const events = arrOfEvents(allTasks);
@@ -34,6 +34,7 @@ const CalendarApp = ({ allTasks }) => {
                 selectDate={selectDate}
                 setSelectDate={setSelectDate}
                 events={events}
+                setParentTask={setParentTask}
               />
             ) : (
               <WeekIndicator
@@ -52,7 +53,7 @@ const CalendarApp = ({ allTasks }) => {
 
 CalendarApp.propTypes = {
   // groupBy: PropTypes.string.isRequired,
-  // setParentTask: PropTypes.func.isRequired,
+  setParentTask: PropTypes.func.isRequired,
   allTasks: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };
 

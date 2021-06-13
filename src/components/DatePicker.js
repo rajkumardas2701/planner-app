@@ -20,12 +20,14 @@ const DatePicker = ({
     setShowYear(!showYear);
   };
   const upYear = () => {
-    currentYear -= 1;
+    currentYear -= 12;
+    setFirstYear(currentYear);
     // console.log('Current Year in Date Picker', currentYear);
     setSelectDate(moment(`1-${month + 1}-${currentYear}`, 'DD-MM-YYYY'));
   };
   const downYear = () => {
-    currentYear += 1;
+    currentYear += 12;
+    setFirstYear(currentYear);
     // console.log('Current Year in Date Picker', currentYear);
     setSelectDate(moment(`1-${month + 1}-${currentYear}`, 'DD-MM-YYYY'));
   };

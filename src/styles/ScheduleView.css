@@ -79,12 +79,11 @@
   display: none;
   width: 30px;
   height: 30px;
-  padding: 0;
-  border: 0;
+  padding: 0px;
+  border: 0px;
 }
-
 .add-task-in-calendar-text {
-  margin: 0;
+  margin: 0px;
   font-size: 25px;
 }
 

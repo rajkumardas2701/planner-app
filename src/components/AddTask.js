@@ -10,7 +10,7 @@ const AddTask = ({
     id: '',
     name: '',
     toDo: '',
-    dueDate: moment(dateClicked).format('YYYY-MM-DD'),
+    dueDate: dateClicked !== '' ? moment(dateClicked).format('YYYY-MM-DD') : '',
     assign: '',
     progress: '',
   });
@@ -22,7 +22,7 @@ const AddTask = ({
       id: '',
       name: '',
       toDo: '',
-      dueDate: moment(dateClicked).format('MM/DD/YYYY'),
+      dueDate: moment(dateClicked).format('MM/DD/YYYY') || '',
       assign: '',
       progress: '',
     });

@@ -20,6 +20,10 @@ In both the views (Board and Schedule), you can group task by progress or due da
 - HTML and CSS
 - Eslint and Stylelint as linters
 
+## Demo
+
+- [Live version](https://rajda-planner-app.netlify.app/)
+
 ## Project Setup
 
 - Fork this GitHub repository

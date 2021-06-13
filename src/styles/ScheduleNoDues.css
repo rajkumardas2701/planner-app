@@ -1,0 +1,28 @@
+.unscheduled-title {
+  margin-top: 0;
+}
+
+.unschedule-button-completed,
+.unschedule-button-inProgress,
+.unschedule-button-notStarted,
+.unschedule-button-no-due-date {
+  transform: rotate(90deg);
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  border: 0;
+  background-color: white;
+}
+
+.progress-title-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.angle-down-reverse-not-started,
+.angle-down-reverse-in-progress,
+.angle-down-reverse-completed,
+.angle-down-reverse-no-due-date {
+  transform: rotate(270deg);
+}

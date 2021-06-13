@@ -1,0 +1,49 @@
+.due-date-view-container {
+  display: flex;
+  flex-direction: row;
+  height: 815px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.dueDate-title-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.add-task {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.due-date-btns {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  border: 1px solid rgb(197, 195, 195);
+  box-shadow: 5px 5px rgb(197, 195, 195);
+}
+
+.add-icon {
+  font-size: 30px;
+  color: green;
+  margin-left: 10px;
+}
+
+.add-icon-title {
+  margin-left: 10px;
+  color: green;
+  font-size: 15px;
+}
+
+.due-date-each {
+  padding-left: 0;
+  padding-right: 30px;
+  width: 200px;
+}

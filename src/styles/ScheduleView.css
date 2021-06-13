@@ -1,0 +1,93 @@
+.schedule-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.calendar-section {
+  width: 80%;
+  box-shadow: 3px 3px 3px 3px rgb(197, 195, 195);
+  height: 790px;
+}
+
+.no-due-section {
+  width: 15%;
+  height: 790px;
+}
+
+.each-task,
+.task-in-week {
+  margin: 2px auto;
+  border: 1px solid rgb(197, 195, 195);
+  background-color: rgb(197, 195, 195);
+  padding: 0 5px;
+}
+
+.week-date-display {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.link-to-extra {
+  margin-top: 5px;
+  border: 0;
+  background-color: white;
+  text-decoration: underline;
+  color: blue;
+}
+
+.extra-btn-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.with-extra-task-container {
+  position: relative;
+}
+
+.list-extra-task {
+  padding: 20px 15px;
+  width: 250px;
+  border: 1px solid rgb(219, 218, 218);
+  background-color: rgb(246, 244, 244);
+  position: absolute;
+  top: -25px;
+  border-radius: 5px;
+}
+
+.list-tasks-date-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.list-tasks-date-section > button {
+  border: 0;
+  background-color: rgb(246, 244, 244);
+}
+
+.date-add-icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.add-task-in-calendar {
+  display: none;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+}
+
+.add-task-in-calendar-text {
+  margin: 0;
+  font-size: 25px;
+}
+
+.date-container:hover .add-task-in-calendar {
+  display: block;
+}

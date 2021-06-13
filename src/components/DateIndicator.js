@@ -27,9 +27,6 @@ const DateIndicator = ({ selectDate, events }) => {
     e.preventDefault();
     setShowExtraTask(!showExtraTask);
   };
-  // document.querySelector('div[data-active-month=false]').style
-  // console.log(setSelectDate);
-  // console.log('dayEvents in DateIndicator', datesAndEvents);
   const totalSlots = datesAndEvents.map((i) => (
     <div
       className={`date-icon ${i.class}`}
@@ -38,9 +35,15 @@ const DateIndicator = ({ selectDate, events }) => {
       data-date={i.date.toString()}
     >
       <div className="date-container">
-        <p className="date-label">
-          {getDayOfMonth(i.date)}
-        </p>
+        <div className="date-add-icon-container">
+          <p className="date-label">
+            {getDayOfMonth(i.date)}
+          </p>
+          <button type="button" className="add-task-in-calendar">
+            <p className="add-task-in-calendar-text">+</p>
+          </button>
+        </div>
+        
         <div className="date-task">
           {
             (i.dayEvents.length <= 2)

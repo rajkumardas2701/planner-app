@@ -21,9 +21,7 @@ const WeekIndicator = ({ selectDate, events }) => {
             <div className="week-date-display">
               {
                 d.date.getDate()
-                // console.log(d.date.getDate())
               }
-              {/* {console.log(d.toDate())} */}
             </div>
             <div>
               {

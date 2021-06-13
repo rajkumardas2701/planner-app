@@ -68,3 +68,25 @@
   border: 0;
   background-color: rgb(246, 244, 244);
 }
+
+.date-add-icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.add-task-in-calendar {
+  display: none;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  border: 0px;
+}
+.add-task-in-calendar-text {
+  margin: 0px;
+  font-size: 25px;
+}
+
+.date-container:hover .add-task-in-calendar {
+  display: block;
+}

@@ -3,9 +3,9 @@ import '../styles/AddTask.css';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-const AddTask = ({ setParentTask, setShowForm, status, dateClicked }) => {
-    console.log('Inside addtask', moment(dateClicked).format('YYYY-MM-DD'));
-  // }
+const AddTask = ({
+  setParentTask, setShowForm, status, dateClicked,
+}) => {
   const [taskform, setTaskForm] = useState({
     id: '',
     name: '',
@@ -90,7 +90,6 @@ const AddTask = ({ setParentTask, setShowForm, status, dateClicked }) => {
           value={dueDate}
           onChange={handleChange}
         />
-        {console.log('Due date inside JSX of Add Task', dueDate)}
         <input
           placeholder="Assign"
           name="assign"

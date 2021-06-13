@@ -30,15 +30,10 @@ const DateIndicator = ({ selectDate, events, setParentTask }) => {
     e.preventDefault();
     setShowExtraTask(!showExtraTask);
   };
-  
+
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(e);
-    // const x = (e.target.parentElement.parentElement.innerText).split('')[0];
-    // const y = (e.target.parentElement.parentElement.innerText).split('')[1];
-    // dateDateClicked(parseInt(x + y, 10));
     setDateClicked(e.target.parentElement.parentElement.parentElement.parentElement.dataset.date);
-    console.log('selected date in handleClick', typeof e.target.parentElement.parentElement.parentElement.parentElement.dataset.date);
     // dateClicked = e.target.parentElement.parentElement.parentElement.parentElement.dataset.date;
     setShowForm(!showForm);
   };
@@ -58,10 +53,10 @@ const DateIndicator = ({ selectDate, events, setParentTask }) => {
             <p className="add-task-in-calendar-text">+</p>
           </button>
           {
-            showForm &&
-            (dateClicked === (i.date.toString())) &&
-            (
-              <AddTask 
+            showForm
+            && (dateClicked === (i.date.toString()))
+            && (
+              <AddTask
                 setParentTask={setParentTask}
                 setShowForm={setShowForm}
                 dateClicked={dateClicked}

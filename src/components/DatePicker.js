@@ -15,7 +15,6 @@ const DatePicker = ({
     years.push(i);
   }
   const handleYearPanel = () => {
-    console.log(setFirstYear);
     setShowMonth(!showMonth);
     setShowYear(!showYear);
   };

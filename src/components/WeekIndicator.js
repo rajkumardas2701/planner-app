@@ -15,7 +15,7 @@ const WeekIndicator = ({ selectDate, events }) => {
       {
         dates.map((d) => (
           <div
-            key={d}
+            key={d.date.toString()}
             className="week-date"
           >
             <div className="week-date-display">

@@ -46,13 +46,14 @@ const ProgressView = ({ setParentTask, currentToDos, classN }) => {
 };
 
 ProgressView.propTypes = {
-  setParentTask: PropTypes.func.isRequired,
+  setParentTask: PropTypes.func,
   currentToDos: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   classN: PropTypes.string.isRequired,
 };
 
 ProgressView.defaultProps = {
   currentToDos: [],
+  setParentTask: () => {},
 };
 
 export default ProgressView;

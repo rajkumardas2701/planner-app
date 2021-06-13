@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import '../styles/AddTask.css';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
-const AddTask = ({ setParentTask, setShowForm, status }) => {
+const AddTask = ({ setParentTask, setShowForm, status, dateClicked }) => {
+    console.log('Inside addtask', moment(dateClicked).format('YYYY-MM-DD'));
+  // }
   const [taskform, setTaskForm] = useState({
     id: '',
     name: '',
     toDo: '',
-    dueDate: '',
+    dueDate: moment(dateClicked).format('YYYY-MM-DD'),
     assign: '',
     progress: '',
   });
@@ -19,7 +22,7 @@ const AddTask = ({ setParentTask, setShowForm, status }) => {
       id: '',
       name: '',
       toDo: '',
-      dueDate: '',
+      dueDate: moment(dateClicked).format('MM/DD/YYYY'),
       assign: '',
       progress: '',
     });
@@ -51,7 +54,7 @@ const AddTask = ({ setParentTask, setShowForm, status }) => {
   //   }
   // };
   return (
-    <div>
+    <div className="form-task-container">
       {/* {console.log('addTask form details', taskform)} */}
       {/* {console.log('set task from AddTask view', setTask)} */}
       <form onSubmit={taskSubmit} className="add-task-form">
@@ -87,6 +90,7 @@ const AddTask = ({ setParentTask, setShowForm, status }) => {
           value={dueDate}
           onChange={handleChange}
         />
+        {console.log('Due date inside JSX of Add Task', dueDate)}
         <input
           placeholder="Assign"
           name="assign"
@@ -106,10 +110,12 @@ AddTask.propTypes = {
   setParentTask: PropTypes.func.isRequired,
   setShowForm: PropTypes.func.isRequired,
   status: PropTypes.string,
+  dateClicked: PropTypes.instanceOf(Date),
 };
 
 AddTask.defaultProps = {
   status: 'Not started',
+  dateClicked: '',
 };
 
 export default AddTask;

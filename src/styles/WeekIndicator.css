@@ -1,0 +1,12 @@
+.week-date {
+  border: 1px solid black;
+  width: 217px;
+}
+
+.week-container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  height: 720px;
+  justify-content: space-between;
+}

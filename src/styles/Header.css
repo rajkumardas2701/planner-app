@@ -1,0 +1,200 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  width: 98%;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 0 10px;
+}
+
+.view-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 10%;
+  margin-left: 40px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 30%;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.user-details > img {
+  border-radius: 15px;
+  margin-right: 10px;
+}
+
+.user-details > p {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.categories-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 60%;
+  height: 30px;
+  align-items: center;
+}
+
+.categories-section > p {
+  margin: 0 auto;
+}
+
+.title-text {
+  width: 60%;
+  height: 30px;
+  margin-top: -12px;
+  margin-left: 5px;
+}
+
+.image-task {
+  width: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.image {
+  background-color: red;
+  padding: 15px 10px;
+  width: 40px;
+  height: 30px;
+}
+
+.image > p {
+  margin: 5px 0 0 5px;
+}
+
+.main-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 auto;
+  width: 150px;
+}
+
+.sub-title {
+  font-size: 12px;
+  margin-top: -3px;
+  margin-bottom: 0;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 95px;
+  right: 270px;
+  width: 140px;
+  border: 1px solid rgb(197, 195, 195);
+  margin-left: 0;
+}
+
+.progress-filters,
+.due-filters {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-btn {
+  position: relative;
+  text-align: left;
+}
+
+.filter-title {
+  font-weight: 700;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.filter-title > p {
+  margin: 0;
+}
+
+.board-button,
+.schedule-button {
+  height: 40px;
+  border: 0;
+  margin: 2px;
+  background-color: white;
+}
+
+.board-button:hover,
+.schedule-button:hover {
+  border-bottom: 2px solid green;
+}
+
+.board-schedule-click {
+  border-bottom: 2px solid green;
+  font-weight: 600;
+}
+
+.header-right-section {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 600px;
+  justify-content: center;
+  align-items: center;
+}
+
+.groupby-dropdown {
+  margin-left: 10px;
+}
+
+.btn-check {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.icon-style {
+  color: green;
+}
+
+.filter-style {
+  background-color: white;
+  border: none;
+}
+
+.filter-btn-main {
+  height: 30px;
+  background-color: white;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90px;
+}
+
+.filter-btn-main > p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.angle-down-reverse {
+  transform: rotate(180deg);
+}
+
+.angle-down-reverse-due {
+  transform: rotate(180deg);
+}
+
+button {
+  cursor: pointer;
+}
+
+.filter-icon {
+  font-size: 20px;
+}

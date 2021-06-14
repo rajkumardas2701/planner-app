@@ -1,0 +1,74 @@
+.date-picker-section {
+  width: 155px;
+  height: 210px;
+  position: absolute;
+  top: 150px;
+  left: 65px;
+  background-color: white;
+  border: 1px solid rgb(197, 195, 195);
+}
+
+.year-btn,
+.month-btn {
+  width: 37.5px;
+  background-color: white;
+  cursor: pointer;
+  height: 50px;
+  padding: 0 !important;
+  border: 0;
+}
+
+.year-container,
+.month-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  position: absolute;
+  top: 50px;
+  height: 100px;
+}
+
+.year-selector {
+  width: 112.5px;
+  border: 0;
+  background-color: #e0e0e0;
+}
+
+.year-nav,
+.year-btn {
+  border: 0;
+}
+
+.year-nav,
+.year-btn,
+.month-btn,
+.today-btn {
+  background-color: white;
+}
+
+.select-nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.today-btn {
+  position: absolute;
+  top: 182px;
+  right: 10px;
+}
+
+.down-arrow-nav {
+  transform: rotate(-90deg);
+  font-size: 15px;
+}
+
+.up-arrow-nav {
+  transform: rotate(45deg);
+  font-size: 15px;
+}

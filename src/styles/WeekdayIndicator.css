@@ -1,0 +1,13 @@
+.header-row {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.week-day {
+  font-weight: 600;
+}

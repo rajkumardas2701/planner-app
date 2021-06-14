@@ -7,7 +7,7 @@
 
 .progress-view-container-each {
   width: 30%;
-  height: 650px;
+  height: 800px;
 }
 
 .progress-btns {
@@ -56,6 +56,6 @@
 }
 
 .progress-view-alltasks {
-  height: 650px;
+  height: 680px;
   overflow-y: auto;
 }

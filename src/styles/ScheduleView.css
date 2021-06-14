@@ -24,9 +24,9 @@
 }
 
 .week-date-display {
-  margin-left: 10px;
-  margin-top: 10px;
-  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .link-to-extra {
@@ -89,5 +89,9 @@
 }
 
 .date-container:hover .add-task-in-calendar {
+  display: block;
+}
+
+.week-date:hover .add-task-in-calendar {
   display: block;
 }

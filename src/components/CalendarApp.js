@@ -41,6 +41,7 @@ const CalendarApp = ({ allTasks, setParentTask }) => {
                 selectDate={selectDate}
                 setSelectDate={setSelectDate}
                 events={events}
+                setParentTask={setParentTask}
               />
             )
           }

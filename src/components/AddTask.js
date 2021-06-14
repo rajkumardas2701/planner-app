@@ -109,7 +109,8 @@ AddTask.propTypes = {
   setParentTask: PropTypes.func.isRequired,
   setShowForm: PropTypes.func.isRequired,
   status: PropTypes.string,
-  dateClicked: PropTypes.instanceOf(Date),
+  // dateClicked: PropTypes.instanceOf(Date),
+  dateClicked: PropTypes.string,
 };
 
 AddTask.defaultProps = {
